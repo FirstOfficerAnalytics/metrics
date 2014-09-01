@@ -7,11 +7,11 @@
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
   <body>
-    
+
     <div id="main" role="main">
       <%= yield %>
     </div>
-    
+
     <aside>
       <h2>Recent Articles</h2>
       <ol>
@@ -24,6 +24,16 @@
       <ol>
         <% blog.tags.each do |tag, articles| %>
           <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+        <% end %>
+      </ol>
+
+      <h2>Categories</h2>
+      <ol>
+        <% categories = blog.articles.group_by {|a| a.metadata[:page]['category'] } %>
+        <% categories.each do |category, articles| %>
+          <li>
+            <%= link_to category, category_path(category) %>
+          </li>
         <% end %>
       </ol>
 
