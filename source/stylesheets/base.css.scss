@@ -1,5 +1,9 @@
-p, h1 {
+p, h1, h2 {
   font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 24px;
 }
 
 p.navbar-text {
@@ -13,4 +17,42 @@ img.toolbar_logo {
 
 #main {
   margin-top: 10px;
+}
+
+aside {
+  font-size: 12px;
+
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  ul
+  {
+    list-style-type: none;
+    padding: 0 0 0 0;
+  }
+}
+
+.cheatsheet {
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 0 0;
+  }
+  font-size: 16px;
+  p {
+    font-size: 16px;
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
