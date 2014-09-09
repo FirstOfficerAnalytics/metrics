@@ -5,6 +5,6 @@
   <%= stylesheet_link_tag "flat-ui" %>
   <%= stylesheet_link_tag "base" %>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-  <title>FirstOfficer.io Documentation<%= ' - ' + current_article.title unless current_article.nil? %></title>
+  <title>FirstOfficer.io<%= ' - ' + current_article.title unless current_article.nil? %></title>
   <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 </head>

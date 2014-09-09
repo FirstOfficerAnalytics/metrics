@@ -1,8 +1,8 @@
 ---
 title: How to Read the Weekly Email Report
-date: 2014-08-16
+date: 2014-09-09
 tags: FirstOfficer.io Documentation
-published: true
+published: false
 layout: cheatsheet
 ---
 
@@ -22,17 +22,20 @@ Green = better. Red = worse.
 Upwards arrow = larger value than previously. Downwards arrow = smaller value than previously
 
 For most metrics, like revenue & MRR, bigger value is better:
-
-Bigger is better
+<br>
+<%= image_tag 'bigger_is_better.png' %>
+<br>
+<br>
 For churn rate, smaller value is better:
-
-Smaller is better
+<br>
+<%= image_tag 'smaller_is_better.png' %>
+<br>
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Metrics from previous 7 days:'}) %>
 In this section all numbers are compared to the same numbers from a week ago.
-
-Report weekly metrics section 7
+<br>
+<%= image_tag 'report_weekly_metrics_section_7.png' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Revenue:'}) %>
 Revenue from the last 7 days. The days included are shown in gray.
@@ -57,7 +60,8 @@ These rolling metrics are calculated using a 30 day period and they cannot be co
 
 Numbers are compared to the same numbers from 30 days ago. For example, if the reporting period was July 11th to August 9th, the numbers are compared to period June 11th to July 10th.
 
-Report weekly metrics section 30
+<br>
+<%= image_tag 'report_weekly_metrics_section_30.png' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Revenue:'}) %>
 Revenue from the last 30 days. The days included are shown in gray.
