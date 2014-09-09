@@ -1,0 +1,89 @@
+---
+title: How to Read the Weekly Email Report
+date: 2014-09-09
+tags: FirstOfficer.io Documentation
+published: false
+layout: cheatsheet
+---
+
+# How to Read the Weekly Email Report
+
+<%= partial(:cheat_column_start, :locals => { :text => 'When you get it:'}) %>
+Every Sunday. If you business follows a different weekly cycle, please email Jaana for changing the weekday.
+Not available in Hobby plan.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Use:'}) %>
+See how your last week looks in numbers. Follow up trends in monthly metrics.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Symbols:'}) %>
+Green = better. Red = worse.
+Upwards arrow = larger value than previously. Downwards arrow = smaller value than previously
+
+For most metrics, like revenue & MRR, bigger value is better:
+<br>
+<%= image_tag 'bigger_is_better.png' %>
+<br>
+<br>
+For churn rate, smaller value is better:
+<br>
+<%= image_tag 'smaller_is_better.png' %>
+<br>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Metrics from previous 7 days:'}) %>
+In this section all numbers are compared to the same numbers from a week ago.
+<br>
+<%= image_tag 'report_weekly_metrics_section_7.png' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Revenue:'}) %>
+Revenue from the last 7 days. The days included are shown in gray.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Revenue (Normalized):'}) %>
+Normalized subscription revenue and single purchases from the last 7 days.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'New RR:'}) %>
+Normalized subscription revenue from new customers during the last 7 days.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Renew RR:'}) %>
+Old customers' contribution to normalized subscription revenue during the last 7 days. May contain revenue that was not charged this week (due to prepayments). Includes upgrades and downgrades.
+<%= partial 'cheat_column_end' %>
+
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Metrics from previous 30 days:'}) %>
+These rolling metrics are calculated using a 30 day period and they cannot be compared week-to-week. They only show trend changes in monthly performance.
+
+Numbers are compared to the same numbers from 30 days ago. For example, if the reporting period was July 11th to August 9th, the numbers are compared to period June 11th to July 10th.
+
+<br>
+<%= image_tag 'report_weekly_metrics_section_30.png' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Revenue:'}) %>
+Revenue from the last 30 days. The days included are shown in gray.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'MRR:'}) %>
+Monthly Recurring Revenue (MRR), also called monthly normalized subscription revenue.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'New RR:'}) %>
+Normalized subscription revenue from new customers during the last 30 days.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ARPU:'}) %>
+Average recurring revenue per subscription during the last 30 days. Includes all customers who contributed recurring revenue.
+Net MRR Churn Rate
+The percentual loss of recurring revenue as it existed 30 days ago. Includes losses, downgrades and upgrades, but not new MRR. Net churn rates are not normalized.
+<%= partial 'cheat_column_end' %>
+
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'About calculations:'}) %>
+Any refunds and discounts affecting the reporting period are taken into account.
+All the metrics are in UTC time.
+<%= partial 'cheat_column_end' %>
