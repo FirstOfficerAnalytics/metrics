@@ -6,6 +6,14 @@ h1 {
   font-size: 24px;
 }
 
+h2 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
 p.navbar-text {
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
@@ -32,6 +40,18 @@ aside {
     list-style-type: none;
     padding: 0 0 0 0;
   }
+}
+
+.est-reading-time {
+  color: #95A5A6;
+  font-size: 14px;
+}
+
+.hb-link {
+  color: #95A5A6;
+  font-size: 14px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .cheatsheet {
