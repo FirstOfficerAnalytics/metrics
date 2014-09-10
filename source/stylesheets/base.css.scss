@@ -1,4 +1,4 @@
-p, h1, h2 {
+p, h1, h2, ul {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -10,7 +10,7 @@ h2 {
   font-size: 20px;
 }
 
-p {
+p, ul, li {
   font-size: 16px;
 }
 
@@ -33,6 +33,10 @@ aside {
   h2 {
     font-size: 14px;
     font-weight: 700;
+  }
+
+  li {
+    font-size: 14px;
   }
 
   ul

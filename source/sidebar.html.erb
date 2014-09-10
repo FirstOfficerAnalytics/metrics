@@ -1,5 +1,5 @@
 <aside>
-  <% blog.tags.each do |tag, articles| %>
+  <% blog.tags.sort.each do |tag, articles| %>
   <h2><%= "#{tag}" %></h2>
   <ul>
     <% articles.each do |story| %>
