@@ -1,0 +1,53 @@
+---
+title: Customer Churn Rate
+date: 2014-09-09
+tags: Metrics Cheat Sheets
+published: true
+layout: cheatsheet
+---
+#Customer Churn Rate
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Description:'}) %>
+The percentage of customers leaving the business.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Use:'}) %>
+Estimate how long an average customer stays. Needed to calculate Customer Life-Time Value.
+Some examples of monthly customer churn rates and respective customer life-times:<br>
+<%= image_tag 'churn_rate_to_lifetime.png' %>
+￼<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Target:'}) %>
+Minimize churn - smaller the percentage the better. Recommended monthly churn rate is <1%. Recommended annual churn rate is 5% - 7%.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'To Improve it:'}) %>
+Offer annual plans, especially if churn rate is >8%. Increase marketing to your ideal customers. Study cohort retention to find out when customers are lost and improve onboarding & life-cycle emails accordingly.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Affects:'}) %>
+Customer Life-Time Value (CLTV)
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Related to:'}) %>
+MRR Churn Rate, Net MRR Churn Rate
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Formula:'}) %>
+(# or lost customers/ # of customers with subscription up for renewal) * 100%
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Pitfalls:'}) %>
+When customer churns from an annual plan the formula gives you an annual churn rate.
+You’ll need to normalize it to get a monthly churn rate. FirstOfficer does this for you.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Variations:'}) %>
+It varies when a customer is considered as ‘lost’. <br>
+In FirstOfficer.io, customer is lost when s/he doesn’t renew a subscription. If refunds are given to annual subscription, customer is lost at the month when the full amount was refunded and subscription was canceled. If refunds are given to monthly subscription, customer is lost in the month when subscription revenue ceased.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Also called:'}) %>
+Attrition Rate,<br>
+Subscription Churn Rate
+<%= partial 'cheat_column_end' %>
