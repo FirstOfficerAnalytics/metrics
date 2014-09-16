@@ -36,11 +36,7 @@ p.navbar-text {
 code {
   font-family: Verdana, Geneva, sans-serif;
   color: black;
-}
-
-img.toolbar_logo {
-  vertical-align: top;
-  margin-right: 10px;
+  background-color: #F2F4F9;
 }
 
 #main {
@@ -78,6 +74,10 @@ aside {
   margin-bottom: 20px;
 }
 
+.cheatsheet_category {
+  margin-bottom: 10px;
+}
+
 .cheatsheet {
   h1 {
     margin-bottom: 40px;
@@ -94,6 +94,25 @@ aside {
     font-size: 16px;
   }
 
+}
+
+p > img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+img.toolbar_logo {
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+#logo {
+  //color: #1ABC9C;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 1px;
+  //padding: 1em 2em 1em 0.5em;
+  line-height: 24px;
 }
 
 .footer {

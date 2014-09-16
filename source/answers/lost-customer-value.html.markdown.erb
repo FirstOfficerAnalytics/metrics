@@ -1,0 +1,35 @@
+---
+title: Am I losing high-value customers?
+date: 2014-09-09
+published: true
+tags: Answer Business Questions
+layout: article
+---
+<%= partial 'reading-time', locals: {time: '1 minutes'} %>
+# Am I losing high-value or low-value customers?
+
+<%= link_to 'MRR Churn Rate', '/saas-metrics/mrr-churn-rate.html' %>
+ answers this question.
+
+If the MRR Churn Rate is bigger than
+<%= link_to 'Customer Churn Rate', '/saas-metrics/customer-churn-rate.html' %>
+,
+you are losing more high-value customers.
+
+When you are reading the charts, losing high-value customers looks like this (June 2014):
+<%= image_tag 'qa_lost_high_value_customers.png' %>
+
+When the green line for MRR Churn is clearly above the Subscription/Customer Churn (blue line),
+you are losing high-value customers.
+
+If the MRR Churn Rate is smaller than Customer Churn Rate,
+you are losing more low-value customers.
+
+## Detailed information
+
+<%= link_to 'Lost MRR View', 'https://www.firstofficer.io/events/lost?type=60' %>
+shows the MRR and Total Contract Value (TCV)
+ for lost customers:
+ <%= image_tag 'qa_mrr_of_lost_customers.png' %>
+
+ As these customers are lost, the TCV shown here is also the real Customer Life-Time Value.

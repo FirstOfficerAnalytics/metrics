@@ -9,7 +9,7 @@ layout: cheatsheet
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Description:'}) %>
 Subscription revenue that is split to the months when the service is delivered.<br>
-The splitting is called 'normalization'. <br><br>
+The splitting is called 'normalization'. <br>
 <%= image_tag 'normalization.png' %>
 <%= partial 'cheat_column_end' %>
 
@@ -18,7 +18,8 @@ Used to calculate Monthly Recurring Revenue (MRR).
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Why is it needed:'}) %>
-You may have received subscription revenue in advance. Normalization prevents these problems:
+You may have received subscription revenue in advance.<br>
+Normalization prevents these problems:
 <ul>
   <li>
     You may think that your SaaS has started to grow faster, when there are more prepayments
