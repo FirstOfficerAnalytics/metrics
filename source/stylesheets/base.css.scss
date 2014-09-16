@@ -1,5 +1,6 @@
 p, h1, h2, ul {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  color: #34495E; //Wet asphalt
 }
 
 h1 {
@@ -16,6 +17,11 @@ p, ul, li {
 
 p.navbar-text {
   font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+code {
+  font-family: Verdana, Geneva, sans-serif;
+  color: black;
 }
 
 img.toolbar_logo {
@@ -67,6 +73,7 @@ aside {
     font-size: 16px;
     line-height: 22px;
     margin: 0 0 0 0;
+    color: #2980B9;
   }
   font-size: 16px;
   p {
