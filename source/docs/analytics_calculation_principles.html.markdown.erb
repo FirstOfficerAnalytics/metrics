@@ -1,0 +1,94 @@
+---
+title: Calculation Principles
+date: 2014-10-13
+published: true
+tags: FirstOfficer.io Documentation
+layout: article
+---
+<%= partial 'reading-time', locals: {time: '3 minutes'} %>
+# Calculation Principles
+
+This article explains the principles that
+FirstOfficer.io uses to calculate your metrics.
+
+SaaS metrics aren't controlled by Generally Accepted Accounting Principles (GAAP).
+As a result, different apps may use different calculation principles.
+
+If you have a questions about how your metrics are calculated and can't find
+the answer here, please <%= partial 'contact-support' %>.
+
+## What is included in MRR and Revenue?
+Taxes and Stripe fees are included in both
+<%= link_to 'Monthly Recurring Revenue (MRR)', '/saas-metrics/mrr.html' %>
+ and Revenue. Refunds and discounts are excluded.
+
+MRR only includes revenue from subscriptions.
+Any other charges invoiced with a subscription are excluded, as are all other single purchases.
+
+FirstOfficer.io supports volume-based charging if you have implemented it using
+ Stripe subscription's quantity field.
+
+## Customer is lost when a subscription isn't renewed
+
+Customer is lost when the recurring revenue ceases.
+For accurate financial analytics, customer is NOT lost on the
+day he cancels his subscription.
+
+If customer cancels and gets a refund, he is lost at the date when the refund is given. Otherwise he is lost at the date when he should pay again, but doesn't.
+
+FirstOfficer.io does not currently offer
+<%= link_to 'Committed Monthly Recurring Revenue (CMRR)', '/saas-metrics/cmrr.html' %>.
+CMRR would book the MRR losses based on cancellation date, but it does not reflect the recurring revenue collected from customers during the month.
+
+## Churn baselines
+
+Net Churn is calculated using the previous month's total MRR as its base.
+
+All other churn rates check that customer can actually be lost,
+i.e. he has an active subscription that should be renewed.
+
+New customers are excluded from all churn rates. The loss of new customer reduces New MRR.
+
+## All recurring revenue is normalized, including refunds and discounts
+
+To offer most accurate picture of your finances, all transactions that affect MRR are
+<%= link_to 'normalized', '/saas-metrics/normalized-revenue.html' %>.
+
+The method is similar than revenue recognition in accrual accounting,
+but as the target is to create comparable numbers different month lenghts are not adjusted for.
+
+In plain english, a subscription of $120/year results in $10 MRR each
+month - no matter how many days that month has.
+
+Also refunds and discounts are normalized.
+If you give a discount, the discount will be split evenly throughout the subscription period.
+If you give a refund, the refunded amount will be split to the whole subscription period.
+The only exception are the refunds that are given at cancellation time.
+
+## Historical numbers are updated when necessary
+
+Because refunds are normalized, previous months' MRR may change when new refunds appear.
+If you refund a customer today,
+you gave back money that was paid in previous month - thus the
+previous month's MRR need to be adjusted.
+
+You can see the difference between refunds given and
+refunds booked to MRR in Revenue view.
+
+## Prorations are normalized to keep plan and upgrade MRR accurate
+
+When customer upgrades or downgrades his subscription and prorations are used,
+FirstOfficer.io normalizes the prorations to make sure that individual plans' MRR
+and upgrade/downgrade MRR stay accurate.
+
+Example:
+
+A customer is now on plan A, $20/month and upgrades to plan B, $40/month.
+When he changes the plan mid-month, the proration refunds $10 to plan A
+and charges $20 for plan B.
+
+If these amounts would be booked as they are, plan A would have $10 of MRR and plan B would have $20 of MRR.
+Total MRR would change from $20 to $30 and this upgrade would be valued at $10 of MRR, which would be wrong.
+
+FirstOfficer.io will book $0 for plan A and $40 for plan B.
+This way it can accurately calculate that this upgrade caused $20 increase in MRR.

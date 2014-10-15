@@ -1,0 +1,33 @@
+---
+title: Committed MRR
+date: 2014-09-13
+tags: Cheat Sheets
+published: true
+layout: cheatsheet
+---
+# Committed Monthly Recurring Revenue (CMRR)
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Description:'}) %>
+Committed Monthly Recurring Revenue is an estimate
+of how much recurring revenue will be collected next month.
+It takes into account the current customer commitments and contracts.
+<br><br>
+The biggest difference to
+<%= link_to 'Monthly Recurring Revenue (MRR)', '/saas-metrics/mrr.html' %> is that CMRR reduces the
+recurring revenue from customers who have cancelled their subscription,
+but the MRR loss will happen in next month.
+<br><br>
+It may also reduce revenue from customers who are expected to downgrade.
+Likewise, it may contain expected future upgrade revenue.
+<br><br>
+
+CMRR = "how much recurring revenue do I expect next month, based on current contracts?"
+<br><br>
+MRR = "how much recurring revenue did I collect this month?"
+<br><br>
+<b>FirstOfficer.io does NOT calculate CMRR at the moment.</b>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Use:'}) %>
+Estimate next month's recurring revenue. Some companies use this as a replacement for MRR to assess month-to-month performance.
+<%= partial 'cheat_column_end' %>

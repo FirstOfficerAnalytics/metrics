@@ -1,0 +1,47 @@
+---
+title: Monthly Recurring Revenue - MRR
+date: 2014-09-12
+tags: Cheat Sheets
+published: true
+layout: cheatsheet
+---
+# Monthly Recurring Revenue (MRR)
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Description:'}) %>
+Monthly Recurring Revenue shows how much revenue you collected from subscriptions.
+
+There are several variations of MRR, like
+<%= link_to 'Committed MRR  (CMRR)', '/saas-metrics/cmrr.html' %>.
+It is non-GAAP metric, so analytics apps may calculate it differently.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Use:'}) %>
+Assess SaaS business month-to-month performance.
+Calculate all other SaaS metrics.
+Calculate recurring profit. Create projections to estimate future performance.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Why we need it:'}) %>
+When different length subscriptions are offered, bookkeeping stops reflecting true business performance. MRR
+<%= link_to 'normalizes the revenue', '/saas-metrics/normalized-revenue.html' %> so that the time aspect of subscriptions becomes visible.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Affects:'}) %>
+All SaaS metrics
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Formula:'}) %>
+No single formula. How FirstOfficer.io calculates MRR is explained in
+<%= link_to 'Calculation Principles', '/docs/analytics_calculation_principles.html' %>
+ article.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Variations:'}) %>
+Some businesses choose to include recurring but non-contracted revenue to MRR.
+They then use term Contracted MRR to denote the real MRR which excludes any single purchases.
+FirstOfficer.io only includes contracted revenue to MRR.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Also Called:'}) %>
+Contracted Monthly Recurring Revenue.
+<%= partial 'cheat_column_end' %>

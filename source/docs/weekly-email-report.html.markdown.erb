@@ -48,7 +48,8 @@ Revenue from the last 7 days. The days included are shown in gray.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Revenue (Normalized):'}) %>
-Normalized subscription revenue and single purchases from the last 7 days.
+<%= link_to 'Normalized subscription revenue', '/saas-metrics/normalized-revenue.html' %>
+ and single purchases from the last 7 days.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'New RR:'}) %>
