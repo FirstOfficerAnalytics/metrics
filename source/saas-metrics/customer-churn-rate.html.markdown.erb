@@ -41,8 +41,13 @@ MRR Churn Rate, Net MRR Churn Rate
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Pitfalls:'}) %>
+You should only include customers who are able churn (subscriptions up for renewal).
+If you include all customers, the numbers will be wrong.
+<br><br>
 When customer churns from an annual plan the formula gives you an annual churn rate.
-You’ll need to normalize it to get a monthly churn rate. FirstOfficer does this for you.
+You’ll need to normalize it to get a monthly churn rate.
+<br><br>
+If you use FirstOfficer, it does this all for you.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Variations:'}) %>
