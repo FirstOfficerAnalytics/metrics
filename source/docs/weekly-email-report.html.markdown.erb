@@ -9,12 +9,8 @@ layout: cheatsheet
 # How to read the Weekly Email Report
 
 <%= partial(:cheat_column_start, :locals => { :text => 'When you get it:'}) %>
-Every Sunday. Weekly email reports are not available in Hobby plan.
-<br><br>
-If you want to get reports on a different weekday, please
-<%= partial 'contact-support' %>
- for changing the reporting cycle.
-
+Every Sunday,
+although <%= link_to 'the reporting weekday is customizable', 'dashboard-customzation.html'%>
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Use:'}) %>
@@ -93,4 +89,9 @@ The percentual loss of recurring revenue as it existed 30 days ago. Includes los
 <%= partial(:cheat_column_start, :locals => { :text => 'About calculations:'}) %>
 Any refunds and discounts affecting the reporting period are taken into account.
 All the metrics are in UTC time.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Pitfalls:'}) %>
+When your business is small, changes in numbers may cause large percentual changes.
+So don't sweat about the changes - fluctuations are normal.  
 <%= partial 'cheat_column_end' %>
