@@ -25,7 +25,9 @@ When you refund a subscription during a plan change:
 1. Delete/close the old subscription
 1. Create the new subscription
 
-Another option is to run the subscription change with option -d prorate=false
+Another option is to run
+the [subscription change](https://stripe.com/docs/api#update_subscription)
+with a prorate:false option that disables prorations.
 
 If you don't refund the full amount, you'll have to modify the
 account_balance by the amount refunded instead.
@@ -58,7 +60,7 @@ You can't always avoid using account_balance, but avoid using it when possible.
 
 Here are a couple of examples:
 
-### Give discounts with discount coupons, not with account_balance
+### Give discounts with discount coupons, not with account_balance or invoice items with negative amount
 
 When you create a proper discount coupon and set to the customer, you
 can be sure that the discounts get booked right.
@@ -121,6 +123,8 @@ to find out everything that the customer did.
 
 ## 7. Only use 3rd party subscription plugins that create Stripe subscriptions
 
+Many plugins which help you manage Stripe subscriptions bypass Stripe subscriptions altogether.
+
 There are some plugins, like [Koudoku](http://koudoku.org) and [Payola](https://www.payola.io),
 which do utilise Stripe subscriptions and work with analytics apps.
 However, at the time of writing Payola is using account_balance to handle setup fees.
@@ -128,6 +132,4 @@ However, at the time of writing Payola is using account_balance to handle setup 
 
 **What's the problem?**
 
-Your revenue will get booked as single purchases, not MRR.
-
-No Stripe subscriptions = no automatic SaaS metrics.
+If you don't use Stripe subscriptions your revenue will be booked as single charges instead of MRR.
