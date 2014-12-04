@@ -1,0 +1,37 @@
+---
+title: Can I reach this MRR goal?
+date: 2014-09-09
+published: false
+tags: Answer Business Questions
+layout: article
+---
+<!--%= partial 'reading-time', locals: {time: '1 minutes'} %-->
+# Are my new customers happier than the old ones?
+
+
+
+1. How long your current & new customers will stay, on average?
+2. How long your customers have really stayed?
+
+## 1. I want to estimate the future
+
+<%= link_to 'Customer Churn Rate', '/saas-metrics/customer-churn-rate.html' %>
+ answers this question.
+
+Just invert it…
+
+<code> (1/churn rate) * 100% </code>
+
+…and you’ll get the average customer life-time, showing how many months an average customer stays.
+
+I’ve calculated some of the customer life-times for you:
+
+<%= image_tag 'churn_rate_to_lifetime.png' %><br>
+￼
+If your customer churn rate is 15%, an average customer stays for 7 months.
+
+This is also the turnaround time for your customer base. If your customer churn rate is 15%,
+all the customers you have now
+will be gone in 7 months - and you’ll need new customers to replace them.
+
+## 2. I want to see the real current values

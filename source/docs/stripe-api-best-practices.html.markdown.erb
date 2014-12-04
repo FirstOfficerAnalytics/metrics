@@ -1,0 +1,133 @@
+---
+title: Best Practices for Using Stripe API
+date: 2014-11-18
+published: true
+tags: Articles
+layout: article
+---
+<%= partial 'reading-time', locals: {time: '3 minutes'} %>
+# Best Practices for Using Stripe API
+
+There are some things you shouldn't do with the Stripe API,
+if you want your analytics to work out-of-the-box.
+
+These are valid ways to use the API and some of them are presented in Stripe documentation  - but
+they can break your metrics.
+
+In some cases the data can be patched to get the metrics right,
+but that's always extra effort for you.
+
+## 1. Don't lose money when refunding prorated subscriptions
+
+When you refund a subscription during a plan change:
+
+1. Give the refund
+1. Delete/close the old subscription
+1. Create the new subscription
+
+Another option is to run the subscription change with option -d prorate=false
+
+If you don't refund the full amount, you'll have to modify the
+account_balance by the amount refunded instead.
+
+**What's the problem?**
+
+You may accidentally waive customer's fees for several months.
+
+The [refunds aren't reduced from the subscription amount in the proration](https://groups.google.com/a/lists.stripe.com/forum/#!msg/api-discuss/241UNrGUaSI/J89Z5ZMsOfAJ).
+
+So even though you refunded the subscription, the subscription will be prorated
+as no refund had happened - and customer now has account_balance from where he can pay his future fees.
+
+## 2. Avoid using account_balance
+
+Try to avoid modifying Stripe customer's account_balance.
+
+**What's the problem?**
+
+Amounts charged or discounted via account balance may not get booked right.
+
+In many cases it's impossible to differentiate account_balance
+that you set from the account_balance that Stripe sets when doing prorations,
+so the support cannot be added.
+
+FirstOfficer.io recognizes
+setup fees from balance, but not discounts or non-Stripe-payments.
+
+You can't always avoid using account_balance, but avoid using it when possible.
+
+Here are a couple of examples:
+
+### Give discounts with discount coupons, not with account_balance
+
+When you create a proper discount coupon and set to the customer, you
+can be sure that the discounts get booked right.
+
+### Charge setup fees with an extra invoice item, not with account_balance
+
+When you create an
+[invoice item before creating the subscription](https://support.stripe.com/questions/metered-subscription-billing) for the customer,
+the setup fee gets charged in it's own line with the first
+invoice - and analytics apps will know it's a separate charge.
+
+## 3. Only create cent-plans if you really use them
+
+Stripe allows you to create $0.01 plans, which don't get charged until the balance exceeds $0.50.
+
+You might be tempted to put your free plan users to this plan and sneak them into the system. Don't do that.
+
+**What's the problem?**
+
+Your metrics will get watered down with users that should be excluded from the numbers. The cent-plans are meant for
+[capacity-based charging](https://support.stripe.com/questions/how-can-i-create-plans-that-dont-have-a-fixed-price),
+so they will be processed.
+
+## 4. Do not rename plans
+
+Always create a new plan instead of renaming an old plan.
+If you cannot avoid renaming plans, make sure your new plan name does not overlap with the old ones.
+
+**What's the problem?**
+
+All upgrades and downgrades may not get booked to right plans.
+
+Since 2014/7/22, Stripe API now returns plan_id with prorated lines, but some older lines still don't
+have them and the plan name needs to parsed from the description.
+
+
+## 5. Avoid deleting Stripe customer when customer is lost
+
+Do clean up the credit card information and any other information that you
+aren't allowed to keep,
+but do not delete the customer from Stripe, if possible.
+
+**What's the problem?**
+
+When your metrics are shown, you can't identify your old customers.
+
+## 6. Don't create a new Stripe customer for returning customers
+
+When a customer returns, reuse his old Stripe customer.
+
+**What's the problem?**
+
+The returning customers will get booked as new customers.
+
+The Total Contract Values can not be calculated accurately when payments
+are scattered in different Stripe customers.
+
+You will have extra trouble if you need
+to find out everything that the customer did.
+
+## 7. Only use 3rd party subscription plugins that create Stripe subscriptions
+
+There are some plugins, like [Koudoku](http://koudoku.org) and [Payola](https://www.payola.io),
+which do utilise Stripe subscriptions and work with analytics apps.
+However, at the time of writing Payola is using account_balance to handle setup fees.
+
+
+**What's the problem?**
+
+Your revenue will get booked as single purchases, not MRR.
+
+No Stripe subscriptions = no automatic SaaS metrics.
