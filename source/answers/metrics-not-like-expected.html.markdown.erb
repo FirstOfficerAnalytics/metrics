@@ -1,0 +1,71 @@
+---
+title: My numbers aren't what I expected - Why?
+date: 2014-09-09
+published: false
+tags: FAQ
+layout: article
+---
+
+<%= partial 'reading-time', locals: {time: '2 minutes'} %>
+# My numbers aren't what I expected - Why?
+
+To make confident business decisions, you must be confident that your numbers are right.
+
+In principle, everything should work out-of-the-box.
+
+In practice it's possible that:
+
+1. You are using unsupported Stripe API features
+
+1. The calculation rules differ from what you expected
+
+1. Your business model requires customization to the calculations
+
+1. Your numbers are right, but customers are doing something unexpected
+
+1. There is a bug in the system
+
+## You are using unsupported Stripe API features
+
+Modified account balance causes most of the troubles - there's
+no way to automatically recognize all intentions for changed balance.
+
+FirstOfficer.io recognizes setup fees from balance, but not discounts or non-Stripe-payments.
+
+You can read more in <%= link_to 'Best Practices for Using Stripe API', '/docs/stripe-api-best-practices.html' %>.
+
+## The calculation rules differ from what you expected
+
+MRR does not include non-subscription charges, or invoice items charged along with the subscription.
+
+In financial analytics, no money = no customer.
+
+Customers with 100% discounts are marked as lost.
+Customers who missed a payment will be marked as lost (until the payment is recovered).
+Customers who cancelled will not be marked as lost until the payments stop coming.
+
+You can read more in <%= link_to 'Calculation Principles', 'docs/analytics_calculation_principles.html' %>.
+
+## Your business model requires customization to the calculations
+
+Most business models are recognized automatically, but sometimes customization is needed.
+You might for example want to include non-subscription charges to MRR.
+Or have created cent-plans for non-quantity usage and would want them removed from calculations.
+
+## Your numbers are right, but customers are doing something unexpected
+
+One common example is when annual subscriptions come up for the renewal the first time.
+The Net Churn Rate raises as customers finally have a possibility to churn,
+but as MRR Churn Rate is normalized, it continues to show true churn.
+
+You don't need to know about these special cases yourself, just
+ <%= partial 'contact-support' %> if you can't find a plausible explanation for change in numbers.
+
+## There is a bug in the system
+
+Although FirstOfficer.io provides reliable and accurate metrics for a large
+number of customers already, it's always possible that your data triggers a bug.
+
+If you can't find an explanation for the differences in this article,
+please <%= partial 'contact-support' %>. Thanks to the drill-down feature,
+it's easy to compare categorizations against customer lists from your old system.
