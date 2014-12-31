@@ -1,0 +1,80 @@
+---
+title: How to read the Annual Report
+date: 2014-10-08
+published: true
+tags: FirstOfficer.io Documentation
+layout: cheatsheet
+---
+
+<%= partial 'reading-time', locals: {time: '2 minutes'} %>
+# Annual Report
+
+Report does not contain any drill-downs, but each graph has additional information in tooltips.
+Graph series data can be hidden by clicking a series name in the legend.
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Summary:'}) %>
+Lists some of the key data this and previous year.
+Change-% shows what is the percentual change compared to the previous year.
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Revenue:'}) %>
+All revenue collected during the year.
+Discounts and refunds are subtracted. Single purchases are not included.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ARR:'}) %>
+Annual Recurring Revenue (ARR) sums up MRR from each month.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Subscriptions:'}) %>
+The number of active subscriptions at the end of the year.
+If customers have multiple subscriptions, this will differ from the number of active customers.
+<%= partial 'cheat_column_end' %>
+
+Estimated ARR for next year is calculated by multiplying December MRR with 12.
+
+For a stable SaaS business, it gives an estimate how much recurring revenue would be collected during the next year.
+For a growing SaaS business, it is an underestimate.
+<br><br>
+For simple projections, check out
+<%= link_to 'the spreadsheet in this article', 'http://www.happybootstrapper.com/2014/can-grow-6-000-mrr-3-months/' %>.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ARR by Plan:'}) %>
+Shows how big part of the Annual Recurring Revenue (ARR) was collected from each plan.
+ARR is calculated by summing up the
+MRR from each month.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Month-to-Month MRR Growth:'}) %>
+
+Shows Monthly Recurring Revenue month by month.
+Percentual value shows MRR growth compared to the previous month.
+
+<%= partial 'cheat_column_end' %>
+<%= partial(:cheat_column_start, :locals => { :text => 'Month-to-Month Revenue Growth:'}) %>
+
+Shows revenue month by month. Percentual value shows revenue growth compared to the previous month.
+<%= partial 'cheat_column_end' %>
+<%= partial(:cheat_column_start, :locals => { :text => 'Monthly Metrics:'}) %>
+
+Table lists key metrics like
+<%= link_to 'MRR', '/saas-metrics/mrr.html' %>
+and
+<%= link_to 'ARPU', '/saas-metrics/arpu.html' %> by month.
+
+The best value for each row is highlighted with green background and the worst with red background.
+<%= partial 'cheat_column_end' %>
+<%= partial(:cheat_column_start, :locals => { :text => 'MRR by Plan:'}) %>
+
+Shows how MRR by Plan has developed during the year.
+Shows the plans which are the biggest at the end of the year.
+MRR from other plans is grouped into 'Others'.
+<%= partial 'cheat_column_end' %>
+<%= partial(:cheat_column_start, :locals => { :text => 'Year-to-Year MRR Growth:'}) %>
+
+Compares Monthly Recurring Revenue this year and the year before that. Percentual value tells MRR growth compared to same month previous year.
+<%= partial 'cheat_column_end' %>
+<%= partial(:cheat_column_start, :locals => { :text => 'Year-to-Year Revenue Growth:'}) %>
+
+Compares revenue this year and the year before that. Percentual value tells revenue growth compared to same month previous year.
+<%= partial 'cheat_column_end' %>
