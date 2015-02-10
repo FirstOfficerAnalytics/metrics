@@ -1,6 +1,25 @@
-p, h1, h2, ul {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+h1, h2 {
+  font-family: 'PT Serif', serif;
+  //font-family: "Lato", Helvetica, Arial, sans-serif;
   color: #34495E; //Wet asphalt
+}
+
+p {
+  font-family: 'PT Serif', serif;
+  //color: #34495E; //Wet asphalt
+  color: rgb(102, 102, 102);
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  //font-family: 'Montserrat', sans-serif;
+  //font-family: "Lato", Helvetica, Arial, sans-serif;
+
+}
+
+
+body {
+  font-family: 'PT Serif', serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 #main_title {
@@ -31,10 +50,6 @@ h3 {
 
 p, ul, li {
   font-size: 16px;
-}
-
-p.navbar-text {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 
 code {
@@ -105,18 +120,46 @@ p > img {
   margin-bottom: 20px;
 }
 
-img.toolbar_logo {
-  vertical-align: top;
-  margin-right: 10px;
+#site_brand {
+  padding-left: 6px;
+  margin: 0;
 }
 
-#logo {
-  //color: #1ABC9C;
-  font-weight: normal;
-  font-size: 18px;
-  letter-spacing: 1px;
-  //padding: 1em 2em 1em 0.5em;
+.navbar-brand {
+  font-size: 16px;
   line-height: 24px;
+  font-weight: 400;
+}
+
+.navbar .logo {
+  //color: #1ABC9C;
+  background: url('/images/firstofficer_logo_inverse.svg');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: 20px;
+  padding-left: 50px;
+  margin-right: 0px;
+  padding-right: 0px;
+  font-weight: normal;
+  font-size: 16px;
+  //padding: 1em 2em 1em 0.5em;
+  color: rgb(26, 188, 156);
+  line-height: 24px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 0px;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .footer {
