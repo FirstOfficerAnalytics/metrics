@@ -33,14 +33,19 @@ Customer Life-Time Value (CLTV)
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Formula:'}) %>
-<code>MRR / Number of Paying Accounts</code>
+<code>MRR / Number of Paying Subscriptions</code>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Pitfalls:'}) %>
+To get CLTV right, if you include non-paying customers to churn calculations, include them also to ARPU calculations.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Variations:'}) %>
-Can be calculated per segment e.g. ARPU for new customers, ARPU per plan
+In principle, ARPU seems to be a cover-all term for all per-unit revenue metrics.<br>
+Can also be calculated per segment e.g. ARPU for new customers, ARPU per plan
 For non-SaaS businesses, calculate it from revenue.
 For cost-profit comparisons, can include also free plan and trial customers.
-Can also be calculated per user instead of customer/account.
+Can also be calculated per user/seat instead of customer/account/subscription.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Also Called:'}) %>

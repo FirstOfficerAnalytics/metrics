@@ -1,0 +1,185 @@
+---
+title: SaaS Metrics Glossary
+date: 2014-10-13
+tags: Cheat Sheets
+published: false
+layout: cheatsheet
+---
+# SaaS Metrics Glossary
+
+<%= partial(:cheat_column_start, :locals => { :text => ''}) %>
+This is an alphabetical listing of SaaS metrics related terms.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ACL'}) %>
+<b>Average Contract Length, Average Customer Lifespan</b><br>
+
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ACV'}) %>
+<b>Annual Contract Value</b><br>
+Usually <code>monthly subscription price x 12</code>, but several definitions exist.
+
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ARPA'}) %>
+<b>Average Revenue per Account</b><br>
+Also see ARPU.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ARPU'}) %>
+<b>Average Revenue Per User</b><br>
+In practice this can be anything from
+Average Revenue per Seat to Average Revenue per Paying Account. For SaaS, it's most often Average MRR per Subscription.
+<br><br>
+Details, usage and formulas: <%= link_to 'ARPU Cheat Sheet', '/saas-metrics/arpu.html'%>
+<br><br>
+Related to: Average Revenue Per Account (ARPA), Average Revenue Per Paying User (ARPPU)
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ARR'}) %>
+<a name="ARR"></a>
+<b>Annual Recurring Revenue</b>, or <b>Annual Run Rate</b><br>Just like MRR, but uses one year as
+a normalization period. When only annual subscriptions are sold and ARR is
+ as a main metric, there are several variations like with MRR.<br><br>
+ However, when your main metric is MRR, we can use following formulas:
+<br>
+ When estimating future ARR for a single month: <code>MRR x 12</code>
+ <br>
+ When reporting past ARR in annual report: <code>Sum of MRRs from past 12 months</code>
+ <br><br>
+ See also <a href="#MRR">MRR</a>, <a href="#Run Rate">Run Rate</a>, <a href="#RecurringRevenue">Recurring Revenue</a>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Bookings'}) %>
+<b>Total value of committed contracts with customers</b><br>
+When a customer commits to spend money with your company, that is a “booking”.<br>
+However, if a contract period exceeds one year, it's common to book
+just the value from the first year.<br><br>
+Bookings may be used e.g. to calculate provisions for sales personnel, but many SaaSes don't calculate it at all.
+
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Billings'}) %>
+<b>Amount invoiced, sales</b><br>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Burn Rate'}) %>
+<b>Cash spent per month</b><br>
+Burn rate is used when you don't spend money that your business earned, but shareholder capital.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'CR'}) %>
+<b>Conversion Rate</b>.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'CLTV'}) %>
+<b>Estimate of the projected total value of a customer</b><br>
+
+Also abbreviated as LTV. Some have started using Customer LifeTime Revenue...
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'COGS (COS)'}) %>
+<b>Cost of Goods Sold, Cost of Service</b>
+Total Cost to Serve (TCS) / COGS
+Revenue - COS = Gross Profit Margin
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'CPA'}) %>
+<b>Cost Per Acquisition</b>
+<%= partial 'cheat_column_end' %>
+
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Deferred Revenue'}) %>
+<a name="DeferredRevenue"></a>
+<b>Revenue that has not yet been earned</b><br>
+In accrual-basis accounting, the revenue is recognized when the service is delivered.
+The undelivered part is a liability and is called Deferred Revenue.
+<br><br>
+Related to: <a href="#PrepaidMRR">Prepaid MRR</a>
+<br><br>
+Official International Accounting Standards metric (IAS, IFRS, GAAP).
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'GPM'}) %>
+<b>Gross Profit Margin</b><br>
+Sometimes also abbreviated as GP.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'KPI'}) %>
+<b>Key Performance Indicator</b>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'MAU'}) %>
+<b>Monthly Active Users</b><br>
+There's also DAU, Daily Active Users.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Months up front'}) %>
+<b>Average of months of payment received in advance</b>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'MRR'}) %>
+<a name="MRR"></a>
+<b><%= link_to 'Monthly Recurring Revenue', '/saas-metrics/mrr.html'%></b><br>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Prepaid MRR'}) %>
+<a name="PrepaidMRR"></a>
+<b>Sum of all Deferred Revenue</b><br>
+Prepaid MRR is the total value of the subscriptions already charged but not yet delivered.
+<br><br>
+See also <a href="#DeferredRevenue">Deferred Revenue</a>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Recurring Revenue'}) %>
+<a name="RecurringRevenue"></a>
+<b>Revenue that's highly likely to continue in the future</b><br>
+Recurring revenue is booked at the rate that service is delivered.
+Only the part of the revenue
+that's expected to continue also in the next month is included.
+<br><br>
+Booking revenue as it's earned is a standard practice in accrual-basis accounting,
+but when we calculate MRR, we don't do official 'revenue recognition'
+with its standardized rules, but something called 'normalization'.
+We don't call it 'depreciation', because depreciation also
+accounts for loss of value during time.
+We don't call it 'amortization', because amortization is just
+depreciation for intangible assets - like stocks.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Renewal Rate'}) %>
+<b></b>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'ROI'}) %>
+<b>Return of Investment</b>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Run Rate'}) %>
+<a name="RunRate"></a>
+<b>Estimate of how much will be earned over a period of time</b><br>
+In the context of SaaS, often refers to <a href="#ARR">ARR</a>
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'SaaS Quick Ratio'}) %>
+<b>MRR gains compared to MRR losses</b><br>
+<code>(New MRR + Expansion MRR) / (Contraction MRR + Churned MRR)</code><br>
+Recommended to be over 4, SaaS Quick Ratio measures how effectively the acquisition can fight churn.
+<br><br>
+In non-SaaS context, Quick Ratio measures company's ability to pay
+its liabilities with its near cash or quick assets.
+<br><br>
+FirstOfficer discourages the use of SaaS Quick Ratio and offers Growth-to-New Ratio instead:<br>
+<code>MRR Growth / (New MRR + Upgrade MRR)</code><br>
+It similarly measures how much of the gained MRR you get to keep.
+<%= partial 'cheat_column_end' %>
+
+
+<%= partial(:cheat_column_start, :locals => { :text => 'TCV'}) %>
+<b>Total Contract Value</b><br>
+Often used as synonym to CLTV.
+<br><br>
+In FirstOfficer, Total Contract Value is the sum of all payments customer
+has done during his lifetime. It includes everything, even non-subscription purchases.
+<%= partial 'cheat_column_end' %>

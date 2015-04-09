@@ -10,10 +10,15 @@ layout: cheatsheet
 <%= partial(:cheat_column_start, :locals => { :text => 'Description:'}) %>
 The maximum MRR that the current customer flows can support.
 It's the point where the MRR from incoming customers matches the
-MRR lost with the churned customers.
+MRR lost with the churned customers.<br><br>
+Most importantly, <b>at Growth Ceiling your current marketing spend is
+required just to keep your SaaS from shrinking.</b>
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Use:'}) %>
+Growth Ceiling will help you estimate if your business model is profitable.<br>
+It will also help you to get a grasp of when your business growth will stop.
+
 MRR growth will start to slow down when 70% - 80% of Growth Ceiling has been reached.
 If Growth Ceiling is smaller than your current MRR, your business is shrinking towards the Growth Ceiling.
 <br><br>Factors affecting Growth Ceiling are visualized in
@@ -22,8 +27,10 @@ If Growth Ceiling is smaller than your current MRR, your business is shrinking t
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Target:'}) %>
-In the growth phase, optimal growth ceiling is 2 times current MRR, or more.
+In the growth phase, good growth ceiling is 2 times current MRR, or more.
 Any growth ceiling that pleases the owners/investors is ok after the growth phase.
+<br><br>
+The best businesses have "Infinite" Growth Ceiling - meaning there is no ceiling. This happens when Net Churn is negative.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'To Improve it:'}) %>
