@@ -2,29 +2,25 @@
 title: SaaS Metrics Glossary
 date: 2014-10-13
 tags: Cheat Sheets
-published: false
+published: true
 layout: cheatsheet
 ---
 # SaaS Metrics Glossary
 
 <%= partial(:cheat_column_start, :locals => { :text => ''}) %>
-This is an alphabetical listing of SaaS metrics related terms.
+
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'ACL'}) %>
 <b>Average Contract Length, Average Customer Lifespan</b><br>
-
+Use <code>1 / Customer Churn Rate</code>, when calculating the <a href="#CLTV">CLTV</a>.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'ACV'}) %>
 <b>Annual Contract Value</b><br>
-Usually <code>monthly subscription price x 12</code>, but several definitions exist.
+Usually <code>Monthly Subscription Price x 12</code>, but several definitions exist.
+One approach is to cap <a href="#CLTV">CLTV</a> at 12 months.
 
-<%= partial 'cheat_column_end' %>
-
-<%= partial(:cheat_column_start, :locals => { :text => 'ARPA'}) %>
-<b>Average Revenue per Account</b><br>
-Also see ARPU.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'ARPU'}) %>
@@ -48,7 +44,7 @@ a normalization period. When only annual subscriptions are sold and ARR is
  <br>
  When reporting past ARR in annual report: <code>Sum of MRRs from past 12 months</code>
  <br><br>
- See also <a href="#MRR">MRR</a>, <a href="#Run Rate">Run Rate</a>, <a href="#RecurringRevenue">Recurring Revenue</a>
+ See also <a href="#MRR">MRR</a>, <a href="#RunRate">Run Rate</a>, <a href="#RecurringRevenue">Recurring Revenue</a>
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Bookings'}) %>
@@ -56,7 +52,9 @@ a normalization period. When only annual subscriptions are sold and ARR is
 When a customer commits to spend money with your company, that is a “booking”.<br>
 However, if a contract period exceeds one year, it's common to book
 just the value from the first year.<br><br>
-Bookings may be used e.g. to calculate provisions for sales personnel, but many SaaSes don't calculate it at all.
+Bookings may be used e.g. to calculate provisions for sales personnel.
+If you charge the annual and other long-term subscriptions up-front,
+you usually don't need this metric.
 
 <%= partial 'cheat_column_end' %>
 
@@ -65,30 +63,97 @@ Bookings may be used e.g. to calculate provisions for sales personnel, but many 
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Burn Rate'}) %>
+<a name="BurnRate"></a>
 <b>Cash spent per month</b><br>
-Burn rate is used when you don't spend money that your business earned, but shareholder capital.
+Burn rate is a synonymous term for negative cash flow. It is used to calculate how fast a company uses its shareholder capital.
+<br><br>
+People sometimes use burn rate also when
+there are positive cash-flows. In that case what they
+call "gross burn rate" is the normal burn rate and "net burn rate" is <code>Burn Rate - MRR</code>.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'CAC'}) %>
+<b>Customer Acquisition Cost</b><br>
+A unit metric for the price to acquire one customer: <code>Marketing Costs / New Paying Customers</code>.
+<%= partial 'cheat_column_end' %>
+
+<%= partial(:cheat_column_start, :locals => { :text => 'Churn Rate'}) %>
+<b>Percentage of customers who stop subscribing to a service</b><br>
+This is the SaaS metric with most variations of them all.
+<br><br>
+Churn rate can
+be calculated for Customers/Accounts, Subscriptions, Users and MRR.
+<br><br>
+In addition to that there are net and regular (non-net) churn rates.
+The net churn rate is calculated from the whole customer base, while the
+regular churn rate is calculated from customers who can actually churn.
+<%= link_to 'Different variations are used for different purposes', '/docs/how_to_use_different_churn_rates/'%>.
+<br><br>
+On top of that, businesses may use their own
+<%= link_to 'custom definitions for active customers', 'http://blog.firstofficer.io/articles/your-ltv-is-wrong-if/' %>.
+This means that you must be careful when comparing your churn rate to others.
+<br><br>
+Only non-SaaS businesses calculate Revenue Churn from non-normalized revenue and they use
+different formulas, SaaSes use MRR Churn instead.
+<br><br>
+FirstOfficer shows Net MRR Churn, Subscription Churn and MRR Churn.
+If your customers each have just one subscription, Subscription Churn is the same as Customer/User Churn.
+<br><br>
+Details, usage and formulas: <%= link_to 'Customer Churn Rate', '/saas-metrics/customer-churn-rate/'%>
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'CR'}) %>
-<b>Conversion Rate</b>.
+<b>Conversion Rate. The percentage of users who take a desired action</b>.<br>
+In SaaS, usually means the percentage of site visitors who become paying customers.
+<br><br>
+Used to calculate how much you can pay per site visit (PPC).
+  It's also common to calculate intermediate conversion rates (Conversion Funnel): <br>
+  <ul>
+  <li>Visit to Trial Rate</li>
+  <li>Trial to Active Rate</li>
+  <li>Trial to Paid Rate</li>
+  </ul>
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'CLTV'}) %>
-<b>Estimate of the projected total value of a customer</b><br>
-
-Also abbreviated as LTV. Some have started using Customer LifeTime Revenue...
+<a name="CLTV"></a>
+<b>Customer Life-Time Value. Estimate of the projected total value of a customer.</b>
+<br><br>
+"Value" originally meant "profit", but there are several
+variations of this metric. For some reason everyone seems to be nowadays
+calculating the revenue-based variation so that's what FirstOfficer offers too.
+<br><br>
+However, it's strongly recommended that you convert your CLTV to
+the profit-based form before using it.
+<br><br>
+Revenue-based formula:<br>
+<code> (1 / Customer Churn Rate) * ARPU </code><br>
+<br>
+Simplified profit-based formula: <br>
+<code> ((1 / Customer Churn Rate) * ARPU ) * GPM</code><br>
+<br>
+Also abbreviated as LTV.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'COGS (COS)'}) %>
-<b>Cost of Goods Sold, Cost of Service</b>
+<b>Cost of Goods Sold, Cost of Service</b><br>
 Total Cost to Serve (TCS) / COGS
 Revenue - COS = Gross Profit Margin
 <%= partial 'cheat_column_end' %>
 
-<%= partial(:cheat_column_start, :locals => { :text => 'CPA'}) %>
+<!-- partial(:cheat_column_start, :locals => { :text => 'CPA'}) >
 <b>Cost Per Acquisition</b>
-<%= partial 'cheat_column_end' %>
+< partial 'cheat_column_end' -->
 
+<%= partial(:cheat_column_start, :locals => { :text => 'DAU/MAU'}) %>
+<b>Daily Active Users vs Monthly Active Users Ratio</b><br>
+Measures customer activity. While more often used in game industry,
+this metric is often asked by the investors.
+<br><br>
+Active use needs to be defined and measured case-by-case, often
+requiring the user to visit several pages.
+<br><br>This metric is not available in FirstOfficer.
+<%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Deferred Revenue'}) %>
 <a name="DeferredRevenue"></a>
@@ -107,13 +172,15 @@ Sometimes also abbreviated as GP.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'KPI'}) %>
-<b>Key Performance Indicator</b>
+<b>Key Performance Indicator</b><br>
+Any important metric. More often used with derived metrics like CLTV and Churn,
+but there are no rules so any number that's important can be called KPI.
 <%= partial 'cheat_column_end' %>
 
-<%= partial(:cheat_column_start, :locals => { :text => 'MAU'}) %>
+<!-- partial(:cheat_column_start, :locals => { :text => 'MAU'}) >
 <b>Monthly Active Users</b><br>
 There's also DAU, Daily Active Users.
-<%= partial 'cheat_column_end' %>
+< partial 'cheat_column_end' -->
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Months up front'}) %>
 <b>Average of months of payment received in advance</b>
@@ -121,7 +188,39 @@ There's also DAU, Daily Active Users.
 
 <%= partial(:cheat_column_start, :locals => { :text => 'MRR'}) %>
 <a name="MRR"></a>
-<b><%= link_to 'Monthly Recurring Revenue', '/saas-metrics/mrr.html'%></b><br>
+<b>Monthly Recurring Revenue. Revenue that's likely to continue in the next month</b>.<br>
+There are several variations, like <%= link_to 'Committed MRR (CMRR)', '/saas-metrics/cmrr.html'%>
+and Contracted MRR. FirstOfficer shows <%= link_to 'Contracted MRR', '/saas-metrics/mrr.html'%>.
+<br><br>
+In addition to that, it's useful to split MRR to subcomponents:
+<br>
+<ul>
+<li>New MRR - The MRR from new and returning customers</li>
+<li>Lost or Churned MRR - The MRR lost due to leaving customers</li>
+<li>Upgrade MRR - The MRR from plan upgrades</li>
+<li>Downgrade MRR - The MRR from plan downgrades</li>
+</ul>
+Terms Expansion MRR and Contraction MRR are often used synonymously
+with Upgrade and Downgrade MRR. If you are looking only at
+ the top-level MRR, they mean the same thing.
+<br><br>
+However, Expansion and Contraction MRR are used in following formula:
+<br>
+<code>New MRR + Expansion MRR - Contraction MRR - Lost MRR = MRR Growth</code>
+<br><br>
+Unless a <%= link_to 'different definition is used', '/saas-metrics/expansion-vs-upgrade-mrr/'%>,
+the formula above stops working at plan level.
+<br><br>
+It's also worth to notice that different businesses have different
+definitions to what is considered Upgrade and Downgrade.
+For example, when a customer moves from annual to monthly plan,
+<%= link_to 'is that an upgrade or downgrade?', 'http://blog.firstofficer.io/articles/monthly-to-annual-upgrades/'%>
+<br><br>
+MRR Growth is also called Net New MRR. <br>FirstOfficer discourages the use of Net New MRR and recommends using MRR Growth instead.
+<br><br>
+Details, usage and formulas: <%= link_to 'Monthly Recurring Revenue', '/saas-metrics/mrr.html'%>
+<br>
+See also <a href="#RecurringRevenue">Recurring Revenue</a>
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Prepaid MRR'}) %>
@@ -148,18 +247,19 @@ We don't call it 'amortization', because amortization is just
 depreciation for intangible assets - like stocks.
 <%= partial 'cheat_column_end' %>
 
-<%= partial(:cheat_column_start, :locals => { :text => 'Renewal Rate'}) %>
+<!-- partial(:cheat_column_start, :locals => { :text => 'Renewal Rate'}) >
 <b></b>
-<%= partial 'cheat_column_end' %>
+< partial 'cheat_column_end' >
 
-<%= partial(:cheat_column_start, :locals => { :text => 'ROI'}) %>
+< partial(:cheat_column_start, :locals => { :text => 'ROI'}) >
 <b>Return of Investment</b>
-<%= partial 'cheat_column_end' %>
+< partial 'cheat_column_end' -->
 
 <%= partial(:cheat_column_start, :locals => { :text => 'Run Rate'}) %>
 <a name="RunRate"></a>
 <b>Estimate of how much will be earned over a period of time</b><br>
-In the context of SaaS, often refers to <a href="#ARR">ARR</a>
+In the context of SaaS, often refers to <a href="#ARR">ARR</a>. Includes revenue only,
+the costs are calculated in <a href="#BurnRate">Burn Rate</a>.
 <%= partial 'cheat_column_end' %>
 
 <%= partial(:cheat_column_start, :locals => { :text => 'SaaS Quick Ratio'}) %>
