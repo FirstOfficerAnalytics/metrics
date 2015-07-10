@@ -84,10 +84,11 @@ Your metrics will get watered down with users that should be excluded from the n
 [capacity-based charging](https://support.stripe.com/questions/how-can-i-create-plans-that-dont-have-a-fixed-price),
 so they will be processed.
 
-## 4. Do not rename plans
+## 4. Avoid renaming plans if you have prorations before Aug 2014
 
-Always create a new plan instead of renaming an old plan.
-If you cannot avoid renaming plans, make sure your new plan name does not overlap with the old ones.
+If you have prorations that were created before August 2014, consider creating a new plan instead of renaming an old plan.
+
+If you rename plans, make sure your new plan name does not overlap with the old ones.
 
 **What's the problem?**
 
@@ -95,6 +96,8 @@ All upgrades and downgrades may not get booked to right plans.
 
 Since 2014/7/22, Stripe API now returns plan_id with prorated lines, but some older lines still don't
 have them and the plan name needs to parsed from the description.
+
+You can <%= partial 'contact-support' %> and we can check if it's safe to rename plans.
 
 
 ## 5. Avoid deleting Stripe customer when customer is lost
