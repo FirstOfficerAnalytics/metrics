@@ -72,6 +72,14 @@ When you create an
 the setup fee gets charged in it's own line with the first
 invoice - and analytics apps will know it's a separate charge.
 
+### Do use account balance when customer pays in advance
+
+If the customer wants to pay his subscription in advance, you can create a
+charge that puts the amount paid to his account balance.
+
+This balance will be used to pay
+his subscription later and FirstOfficer recognizes the MRR.
+
 ## 3. Only create cent-plans if you really use them
 
 Stripe allows you to create $0.01 plans, which don't get charged until the balance exceeds $0.50.

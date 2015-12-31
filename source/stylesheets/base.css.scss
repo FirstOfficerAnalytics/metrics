@@ -16,6 +16,17 @@ p {
 
 }
 
+.black-box {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #34495e;
+    color: #fff;
+    font-weight: 300;
+    margin: 0 2px 20px;
+    padding: 30px;
+}
+
 body {
   font-family: 'PT Serif', serif;
   -webkit-font-smoothing: antialiased;
