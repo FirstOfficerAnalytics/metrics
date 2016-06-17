@@ -1,0 +1,169 @@
+---
+title: No more automatic redirects
+date: 2015-09-01
+layout: news
+---
+
+The new landing page no longer forwards you to the app automatically.
+
+Please update your bookmarks to point to this address instead: [www.firstofficer.io/app](www.firstofficer.io/app)
+
+
+## Jun 12, 2015 - Bug Alert! Missing Upgrades
+
+Several customers have reported random missing upgrades in May/June.
+
+Stripe's functionality seems to have changed and it no longer sends required proration lines in advance. When the lines arrive FirstOfficer will book the upgrades, but the delay is not acceptable.
+
+The fix is under work, but it will take some time to get it ready as it requires reading Stripe Hooks - a totally new functionality.
+
+This problem does not affect Revenue, just MRR. My apologies for the inconvenience.
+
+
+## May 28, 2015 - Bug fix to detecting invoices paid from Stripe balance
+FirstOfficer was still marking some of the subscriptions paid from customer's balance as lost.
+
+In addition to fixing the bug, old losses were checked again for this problem. This may have caused small changes to your churn numbers.
+
+
+## May 16, 2015 - Bug fix to revenue details, now also showing other plans.
+Bug fix to Revenue View, annual and monthly plan gross revenue:
+Gross revenue now properly shows the revenue from prorations.
+
+Revenue View now also shows the plans that have a special subscription period, so you'll be able to sum up the revenue in different categories.
+
+
+## May 07, 2015 - Churn reason detection
+FirstOfficer now finds out the exact reason for failed payments, ranging from software/API malfunction to invalid expiration year.
+
+From now on, churn is not booked until an invoice actually fails. If invoices are not charged on schedule, you'll see an alarm in the sidebar of the MRR View:
+
+invoices not charged in schedule 
+
+As it's possible to prevent the invoices to be created/charged also through the Stripe API, any subscriptions that are not charged or invoiced will be added to churn after 14 days with an error code "Unknown reason".
+
+This change will affect all new failed payments and error codes for older failed payments will be updated separately within a week.
+
+
+## Apr 15, 2015 - Bug fixes, ARR shown in Metrics View
+Two bug fixes to calculation core: 
+Downgrades paid from customer balance are no longer marked as lost.
+Refunded downgrades that in some rare cases were not recognized, are now properly marked as losses.
+
+Annual Run Rate (ARR) is now visible in Metrics View, calculated with formula 12 x MRR.
+
+
+## Apr 03, 2015 - Patching today: balance payments after downgrade
+When customer downgrades from annual plan, Stripe prorates the subscription and customer pays the monthly payments from his account balance until the annual payment is compensated. FirstOfficer has erroneously marked some of these customers as lost.
+
+Fortunately these aren't common. Today's patch will fix all the existing cases. Official bug fix is under work.
+
+
+## Aug 21, 2015 - Bug fix: Imported payments can be deleted
+When you removed the last payment of the month, the metrics didn't update right. Fixed.
+
+
+## Mar 17, 2015 - Import Non-Stripe Payments
+You can now import non-Stripe payments into the system. More [information and instructions here](http://support.firstofficer.io/docs/importing-non-stripe-payments/).
+
+
+## Jan 01, 2015 - Annual Report 2014
+[Annual Report 2014](https://www.firstofficer.io/annual_report) gives you an overview of the year and helps to communicate your SaaS growth.
+
+[Instructions for reading the report](http://support.firstofficer.io/docs/annual-report/).
+
+Happy and prosperous New Year 2015!
+
+## Dec 22, 2014 - Fix and enhancement to Weekly MRR Growth Chart
+If customer ended his subscription at 5th and created a new subscription at 25th, the contraction and expansion were shown at different weeks. Even though that was what really happened, it added noise and made the Weekly MRR Growth Chart harder to use.
+
+Upgrades and downgrades are now shown as one entry, when possible.
+
+<%= image_tag 'dec_14_weekly_chart_change.png'%>
+
+There was also a bug, which left out some of the downgrades in weekly chart. This only affected losses that were refunded later. It happened because the refunded losses are booked at 23:59:59:999 and the DB queries considered the week to end at 23:59:59:0000. The queries are now fixed.
+
+Both of the problems affected only the Weekly MRR Growth Chart.
+
+The actual bookings and the Monthly MRR Growth Chart were not affected.
+
+If this change affected your dashboard in a noticeable way, you have received an email explaining the impact. I'm sorry for the inconvenience this may have caused.
+
+
+## Dec 01, 2014 - Improved Upgrades & Downgrades View
+
+The improved Upgrades & Downgrades View is now activated. The old view is not available anymore, but you can find similar per-customer listings by clicking the links in the new view.
+
+## Nov 25, 2014 - Celebration!
+
+It's six months from the launch and FirstOfficer.io reached an important MRR milestone last week. All because of You. 
+Thank you for being an awesome customer!
+
+The update capacity has been increased and from now on your dashboard will update once per hour.
+
+All plans now include the Sunday [email report](http://support.firstofficer.io/docs/weekly-email-report/) - or any day email report, it's possible to [customize when your week starts](http://support.firstofficer.io/docs/dashboard-customization/).
+
+
+## Nov 18, 2014 - Major update in how quantities & capacity-based charging are handled
+
+Now detects changes in quantities sooner and uses the real amount from upcoming invoice to determine the change in MRR.
+
+Handles quantity changes right also when plan changes happen at the same month.
+
+The quantity bookings are explained in article [Booking of Capacity-Based Charges](http://support.firstofficer.io/docs/quantity_handling/).
+
+The new Upgrades & Downgrades View is available for beta (except for customers with merged plans).
+
+
+## Oct 17, 2014 - Improvements to MRR View
+
+The MRR View now lets you drill down to the end of month MRR Estimate. 
+Just click at the green MRR estimate figures and see who have already paid and who should pay you next.
+
+## Oct 17, 2014 - Support for Stripe quantities & capacity-based charging (backend)
+
+FirstOfficer.io now tracks changes in subscription quantities and books them along the other upgrades & downgrades.
+
+It also tracks other changes. So if you charged $15/month last month and just modified the plan, the change will be detected as upgrade/downgrage.
+
+Also changes in currency exchange rate will be detected and shown in upgrades/downgrades.
+
+I'm working on Upgrades/Downgrades View to show the capacity changes separately. Until that the changes are shown along with all the other upgrades and downgrages.
+
+## Oct 17, 2014 - Improvements to multi-currency support
+
+Until now, FirstOfficer.io has shown your dashboard in the currency that your bank account uses. But Stripe recently added Refund objects to their API. So I can now offer your dashboard in USD and still double-check everything automatically.
+
+If you want your dashboard to be converted in USD, please send an email to support@firstofficer.io.
+
+## Sep 16, 2014 - Analytics Learning Center
+
+I'm proud to present [the Metrics & Analytics Learning Center](http://support.firstofficer.io/).
+
+## Aug 29, 2014 - Merge plans
+Do you have several plans with the same name and interval, but with different prices or Stripe ids? 
+Would you like to view them as one plan in MRR and Metrics view? Now you can.
+
+To activate the plan merge feature, please send an email to support@firstofficer.io.
+
+
+## Aug 21, 2014 - Tooltip date labels fixed
+The tooltips in MRR, MRR Growth and Retention view have been showing incorrect month names. The x-axis labels below the charts have been showing the correct information. 
+
+This bug has affected you if you are located in timezones UTC-1 - UTC-11. I apologize for any confusion this has caused.
+
+## Aug 10, 2014 - Invite your team members
+
+You can now give own accounts to your team members. Just visit your account page and invite them! 
+You can invite max. 10 people.
+
+## Jul 20, 2014 - Support for charging one-time setup fees using customer balance
+
+If you have been charging one-time fees by [setting an account balance when customer is created](https://support.stripe.com/questions/subscription-setup-fees) , the setup fee has not been reported correctly in FirstOfficer.io.
+
+From now on, the setup fees will be correctly reported as single purchases and will be visible in revenue view. 
+However, the recommended way to charge setup fees is to [create an invoice item before subscription is created](https://support.stripe.com/questions/metered-subscription-billing).
+
+## Jul 13, 2014 - Email reports
+
+From now on, everyone on Startup plan and above will receive a weekly metrics email report.

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<%= partial 'head' %>
+<body>
+<%= partial 'ga_tags' %>
+<%= partial 'navbar' %>
+<div class='container' id="main" role="main">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7">
+      <h1><%= current_page.title %></h1>
+      <%= current_page.date.strftime('%B %e, %Y') %>
+      <br><br>
+      <%= yield %>
+    </div>
+    <div class="hidden-xs hidden-sm col-md-1 col-lg-2">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <%= partial 'sidebar' %>
+    </div>
+  </div>
+  <%= partial 'footer' %>
+</div>
+</body>
+</html>

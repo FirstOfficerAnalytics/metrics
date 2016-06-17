@@ -1,0 +1,18 @@
+---
+layout: home
+---
+
+<h1 id="main_title" >FirstOfficer News and Updates</h1>
+
+<% page_articles.each_with_index do |article, i| %>
+
+  <% if article.path.include?("news-and-updates/")%>
+
+  <h2><%= article.date.strftime('%b %e, %Y') unless article.date.blank? %> <%= link_to article.title, article %> </h2>
+  <p>
+  <%= article.body %>
+  </p>
+  <% end %>  
+<% end %>
+
+
