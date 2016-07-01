@@ -1,0 +1,51 @@
+---
+title: Calculation Principles - Prepaid MRR
+date: 2014-11-18
+published: true
+tags: FirstOfficer.io Documentation
+layout: article
+---
+<%= partial 'reading-time', locals: {time: '2 minutes'} %>
+# Calculation Principles for Prepaid Revenue
+
+*Prepaid Revenue may also be called Prepaid MRR. 
+Unearned Revenue and Deferred Revenue are related concepts in accrual-basis accounting.*
+
+This article explains how FirstOfficer calculates Prepaid Revenue.
+
+<div class='black-box'>Prepaid Revenue is the total sum of all revenue you have collected from customers,
+but haven't provided the service for yet.</div>
+
+## How the Prepaid Revenue is calculated?
+
+Prepaid Revenue calculation follows MRR calculation principles. 
+
+**Example:**
+
+A customer buys an annual subscription 15th Jan and pays $120.
+
+We book $10 to January and $110 to Prepaid Revenue.
+
+We assume that service gets delivered 1st day each month. When 1st of February arrives, $10 is booked to MRR and $100 remains in Prepaid Revenue. 
+
+Prepaid Revenue does not fluctuate with month length, like Deferred Revenue in accrual-basis accounting does.
+Months with 28 days will carry just as much Prepaid Revenue as months with 31 days.  
+
+## How often does it get calculated?
+
+Prepaid Revenue is updated every time your metrics are re-calculated. 
+However, you'll see a large decrease in Prepaid Revenue 1st of each month as part of the previously Prepaid Revenue moves into MRR. 
+
+## How do cancellations affect Prepaid Revenue?
+
+FirstOfficer tracks money, not intention. 
+
+Prepaid Revenue was already paid - so unless the customer requires a refund, cancellation does not reduce your Prepaid Revenue.   
+
+## How do upgrades and downgrades affect Prepaid Revenue?
+
+In principle upgrades and downgrades are also just an intention until you charge the customer (prorate the subscription). 
+ 
+When the proration is made, Prepaid Revenue gets adjusted based on the changes. 
+ 
+There is a pitfall in charging the upgrades with Stripe and you can accidentally let customers use your service for free. Please see tip 1 in [Stripe: When should I charge prorated subscriptions immediately?](http://www.turbineroom.com/2016/stripe-charge-prorated-subscriptions-immediately/).
