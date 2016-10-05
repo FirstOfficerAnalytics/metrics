@@ -1,0 +1,25 @@
+---
+title: Changes to churn recognition
+date: 2016-10-05
+layout: news
+---
+
+**Problem:** FirstOfficer marks customer as lost immediately when charging fails. 
+But what should be done when invoice is not created? 
+
+If loss of customer is probable and we do not mark the customer as lost, the MRR estimate will be temporarily too high.
+
+If retention is probable and we mark the customer as lost, the losses will be temporarily overestimated. 
+
+**Old Solution:** Wait 14 days and then mark customer as lost. 
+
+Majority of missing invoices were caused by rare delays in Stripe invoicing. The invoices were eventually always sent. 
+  However, when [FirstOfficer API](http://apidocs.firstofficer.io/) was added, we now face an increasing amount of 
+  missing invoices where the loss of the customer is probable. 14-day wait period prevents you from getting the churn information in time. 
+
+**New Solution:** For non-Stripe invoices, wait 6 hours and then mark customer as lost. For Stripe invoices, wait 4 days and then mark customer as lost.
+
+This solution should ensure timely detection for real losses and still prevent false alarms from temporary system malfunctions.  
+   
+ 
+ 
