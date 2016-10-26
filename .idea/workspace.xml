@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ceb8db8a-3517-4262-ba6f-e620c3b09814" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ceb8db8a-3517-4262-ba6f-e620c3b09814" name="Default" comment="" />
     <ignored path="metrics.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -26,7 +24,7 @@
       <file leaf-file-name="2016-06-30-turbine_18.html.markdown.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/news-and-updates/2016-06-30-turbine_18.html.markdown.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -53,11 +51,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016-10-05-news.html.markdown.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2016-10-05-news.html.markdown.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/news-and-updates/2016-10-05-news.html.markdown.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46391752">
-              <caret line="21" column="105" selection-start-line="21" selection-start-column="105" selection-end-line="21" selection-end-column="105" />
+            <state vertical-scroll-proportion="-4.375">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-10-26-imported_payments_quantity_support.html.markdown.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/news-and-updates/2016-10-26-imported_payments_quantity_support.html.markdown.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17673048">
+              <caret line="8" column="151" selection-start-line="8" selection-start-column="151" selection-end-line="8" selection-end-column="151" />
               <folding />
             </state>
           </provider>
@@ -93,6 +101,7 @@
         <option value="$PROJECT_DIR$/source/docs/calculation_principles_annual_refunds.html.markdown.erb" />
         <option value="$PROJECT_DIR$/source/news-and-updates/2016-08-15-news.html.markdown.erb" />
         <option value="$PROJECT_DIR$/source/news-and-updates/2016-10-05-news.html.markdown.erb" />
+        <option value="$PROJECT_DIR$/source/news-and-updates/2016-10-26-imported_payments_quantity_support.html.markdown.erb" />
       </list>
     </option>
   </component>
@@ -131,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -220,7 +230,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,14 +238,14 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/source" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/source/news-and-updates" />
       <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$/source/layouts" />
       <recent name="$PROJECT_DIR$/source/updates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source" />
     </key>
   </component>
   <component name="RunManager">
@@ -367,7 +376,7 @@
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26752505" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27110156" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -407,6 +416,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/source/news-and-updates/2016-06-30-turbine_18.html.markdown.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/news-and-updates/2015-09-05-news.html.markdown.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="105" selection-start-line="8" selection-start-column="105" selection-end-line="8" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/news-and-updates/2015-09-21-news.html.markdown.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/news-and-updates/2016-10-05-news.html.markdown.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/docs/how-to-calculate-prepaid-MRR.html.markdown.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -418,7 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,14 +693,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13254787">
           <caret line="6" column="138" selection-start-line="6" selection-start-column="138" selection-end-line="6" selection-end-column="138" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/news-and-updates/2016-10-05-news.html.markdown.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46391752">
-          <caret line="21" column="105" selection-start-line="21" selection-start-column="105" selection-end-line="21" selection-end-column="105" />
+        <state vertical-scroll-proportion="-4.375">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/news-and-updates/2016-10-26-imported_payments_quantity_support.html.markdown.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17673048">
+          <caret line="8" column="151" selection-start-line="8" selection-start-column="151" selection-end-line="8" selection-end-column="151" />
           <folding />
         </state>
       </provider>
