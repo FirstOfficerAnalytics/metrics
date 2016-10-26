@@ -4,6 +4,8 @@ date: 2016-10-26
 layout: news
 ---
 
+This change only affects invoices imported manually or through the API. It does not affect invoices in Stripe.
+
 **Problem:** It has not been possible to add seats/quantities to existing subscription when importing non-Stripe invoices.
    
 **Solution:** If 'subscription ID' is filled, FirstOfficer will add quantities into the subscription referenced instead of creating a new subscription.
