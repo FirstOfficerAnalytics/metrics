@@ -2,9 +2,9 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.2.1'
 # The line below is not a comment
-#ruby-gemset=production_rails_419
+#ruby-gemset=cfo_prod_rails_4251
 
 gem 'nokogiri', "~> 1.6.6" #for post summaries
 

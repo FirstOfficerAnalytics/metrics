@@ -10,7 +10,11 @@ bundle exec middleman
 To get new stuff online:
 
 git add .
+
 git commit -m ‘explanation of your changes'
+
 git push
+
 middleman build —clean (not often necessary)
+
 middleman deploy

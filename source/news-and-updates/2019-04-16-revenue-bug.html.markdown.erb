@@ -1,0 +1,13 @@
+---
+title: Fix for Extra Revenue Bug
+date: 2019-04-16
+layout: news
+---
+
+If your historical revenue numbers have changed this week, it's because of this fix.
+
+Some time ago Stripe changed the uniqueness of one of the item identifiers. As I implemented support for this change, I introduced a bug that caused some invoice lines to be imported twice.
+
+That's why some of the revenue also got booked twice.
+
+I'm running a fix to remove the extra lines and recalculate the revenue again. The work should be over by the end of the week. I'm sorry for this.
