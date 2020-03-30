@@ -114,7 +114,7 @@ configure :build do
   # Use relative URLs
   activate :relative_assets
 
-  redirect "/saas-metrics/normalized-revenue/", to: "https://www.firstofficer.io/saas-metrics/normalized-revenue"
+  redirect "/saas-metrics/normalized-revenue", to: "https://www.firstofficer.io/saas-metrics/normalized-revenue"
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"

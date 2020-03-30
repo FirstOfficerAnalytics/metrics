@@ -146,3 +146,9 @@ DEPENDENCIES
   middleman-deploy (~> 1.0)
   middleman-livereload (~> 3.1.0)
   nokogiri (~> 1.6.6)
+
+RUBY VERSION
+   ruby 2.2.1p85
+
+BUNDLED WITH
+   1.17.3
