@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
+  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/flat-ui.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/base.css" rel="stylesheet" type="text/css" />
+  <title>FirstOfficer.io - Calculation Principles</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand toolbar_logo logo" href="http://www.firstofficer.io">FirstOfficer</a>
+    <a class="navbar-brand" id="site_brand" href="/">/ Metrics Learning Center</a>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/news-and-updates">News and Updates</a>
+      </li>
+      <li>
+        <a href="http://www.turbineroom.com/blog">BLOG</a>
+      </li>
+      <li>
+        <a class="navbar-brand" href="/contact-support/">CONTACT SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='container' id="main" role="main">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7">
+        <div class="est-reading-time">
+  This article takes 3 minutes to read
+</div>
+
+<h1 id="calculation-principles">Calculation Principles</h1>
+
+<p>This article explains the principles that
+FirstOfficer.io uses to calculate your metrics.</p>
+
+<p>SaaS metrics aren't controlled by Generally Accepted Accounting Principles (GAAP).
+As a result, different apps may use different calculation principles.</p>
+
+<p>If you have a questions about how your metrics are calculated and can't find
+the answer here, please <a href="/contact-support/">contact support</a>
+.</p>
+
+<h2 id="what-is-included-in-mrr-and-revenue">What is included in MRR and Revenue?</h2>
+<p>Taxes and Stripe fees are included in both
+<a href="/saas-metrics/mrr/">Monthly Recurring Revenue (MRR)</a>
+ and Revenue. Refunds and discounts are excluded.</p>
+
+<p>MRR only includes revenue from subscriptions.
+Any other charges invoiced with a subscription are excluded, as are all other single purchases.</p>
+
+<p>FirstOfficer.io supports volume-based charging if you have implemented it using
+ Stripe subscription's quantity field.</p>
+
+<h2 id="customer-is-lost-when-a-subscription-isnt-renewed">Customer is lost when a subscription isn't renewed</h2>
+
+<p>Customer is lost when the recurring revenue ceases.
+For accurate financial analytics, customer is NOT lost on the
+day he cancels his subscription.</p>
+
+<p>If customer cancels and gets a refund, he is lost at the date when the refund is given. Otherwise he is lost at the date when he should pay again, but doesn't.</p>
+
+<p>FirstOfficer.io does not currently offer
+<a href="/saas-metrics/cmrr/">Committed Monthly Recurring Revenue (CMRR)</a>.
+CMRR would book the MRR losses based on cancellation date, but it does not reflect the recurring revenue collected from customers during the month.</p>
+
+<h2 id="churn-baselines">Churn baselines</h2>
+
+<p>Net Churn is calculated using the previous month's total MRR as its base.</p>
+
+<p>All other churn rates check that customer can actually be lost,
+i.e. he has an active subscription that should be renewed.</p>
+
+<p>New customers are excluded from all churn rates. The loss of new customer reduces New MRR.</p>
+
+<h2 id="all-recurring-revenue-is-normalized-including-refunds-and-discounts">All recurring revenue is normalized, including refunds and discounts</h2>
+
+<p>To offer most accurate picture of your finances, all transactions that affect MRR are
+<a href="/saas-metrics/normalized-revenue/">normalized</a>.</p>
+
+<p>The method is similar than revenue recognition in accrual accounting,
+but as the target is to create comparable numbers different month lenghts are not adjusted for.</p>
+
+<p>In plain english, a subscription of $120/year results in $10 MRR each
+month - no matter how many days that month has.</p>
+
+<p>Also refunds and discounts are normalized.
+If you give a discount, the discount will be split evenly throughout the subscription period.
+If you give a refund, the refunded amount will be split to the whole subscription period.
+The only exception are the refunds that are given at cancellation time.</p>
+
+<h2 id="historical-numbers-are-updated-when-necessary">Historical numbers are updated when necessary</h2>
+
+<p>Because refunds are normalized, previous months' MRR may change when new refunds appear.
+If you refund a customer today,
+you gave back money that was paid in previous month - thus the
+previous month's MRR need to be adjusted.</p>
+
+<p>You can see the difference between refunds given and
+refunds booked to MRR in Revenue view.</p>
+
+<h2 id="prorations-are-normalized-to-keep-plan-and-upgrade-mrr-accurate">Prorations are normalized to keep plan and upgrade MRR accurate</h2>
+
+<p>When customer upgrades or downgrades his subscription and prorations are used,
+FirstOfficer.io normalizes the prorations to make sure that individual plans' MRR
+and upgrade/downgrade MRR stay accurate.</p>
+
+<p>Example:</p>
+
+<p>A customer is now on plan A, $20/month and upgrades to plan B, $40/month.
+When he changes the plan mid-month, the proration refunds $10 to plan A
+and charges $20 for plan B.</p>
+
+<p>If these amounts would be booked as they are, plan A would have $10 of MRR and plan B would have $20 of MRR.
+Total MRR would change from $20 to $30 and this upgrade would be valued at $10 of MRR, which would be wrong.</p>
+
+<p>FirstOfficer.io will book $0 for plan A and $40 for plan B.
+This way it can accurately calculate that this upgrade caused $20 increase in MRR.</p>
+
+      </div>
+      <div class="hidden-xs hidden-sm col-md-1 col-lg-2">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <aside>
+  <h2>Answer Business Questions</h2>
+  <ul>
+    <li>
+      <a href="/answers/lost-customer-value/">Am I losing high-value customers?</a>
+    </li>
+  </ul>
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="/docs/stripe-api-best-practices/">Best Practices for Using Stripe API</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-use-arpu/">How to use ARPU</a>
+    </li>
+    <li>
+      <a href="/docs/how_to_use_different_churn_rates/">Why do I need 3 Churn Rates?</a>
+    </li>
+  </ul>
+  <h2>Cheat Sheets</h2>
+  <ul>
+    <li>
+      <a href="/saas-metrics/churn-baseline/">Churn Baseline</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/arpu/">Average Revenue Per User - ARPU</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/saas-metrics-glossary/">SaaS Metrics Glossary</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/customer-churn-rate/">Churn Rate (Customers)</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/expansion-vs-upgrade-mrr/">Expansion vs. Upgrade, the Difference</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/cmrr/">Committed MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/growth-ceiling/">Growth Ceiling</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/mrr/">Monthly Recurring Revenue - MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/normalized-revenue/">Normalized Subscription Revenue</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/prepaid-mrr/">Prepaid MRR</a>
+    </li>
+  </ul>
+  <h2>FAQ</h2>
+  <ul>
+    <li>
+      <a href="/answers/metrics-not-like-expected/">My numbers aren't what I expected - Why?</a>
+    </li>
+  </ul>
+  <h2>FirstOfficer.io Documentation</h2>
+  <ul>
+    <li>
+      <a href="/docs/importing-non-stripe-payments/">Importing Non-Stripe Payments</a>
+    </li>
+    <li>
+      <a href="/docs/analytics_calculation_principles/">Calculation Principles</a>
+    </li>
+    <li>
+      <a href="/docs/calculation_principles_annual_refunds/">Calculation Principles - Annual Subscription Refunds</a>
+    </li>
+    <li>
+      <a href="/docs/quantity_handling/">Booking of Capacity-Based Charges</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-calculate-prepaid-MRR/">Calculation Principles - Prepaid MRR</a>
+    </li>
+    <li>
+      <a href="/docs/weekly-email-report/">How to read the Weekly Email Report</a>
+    </li>
+    <li>
+      <a href="/docs/annual-report/">How to read the Annual Report</a>
+    </li>
+    <li>
+      <a href="/docs/dashboard-customization/">Dashboard Customization</a>
+    </li>
+  </ul>
+</aside>
+
+      </div>
+    </div>
+    <div class='footer'>
+© 2014-2016 FirstOfficer.io by Turbine Room Ltd. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>

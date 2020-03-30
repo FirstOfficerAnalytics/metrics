@@ -1,0 +1,179 @@
+/* line 1, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+h1, h2 {
+  color: #34495E; }
+
+/* line 6, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+p {
+  color: #666666;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal; }
+
+/* line 16, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.black-box {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #34495e;
+  color: #fff;
+  font-weight: 300;
+  margin: 0 2px 20px;
+  padding: 30px; }
+
+/* line 27, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+body {
+  -webkit-font-smoothing: antialiased; }
+
+/* line 32, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+#main_title {
+  font-size: 40px;
+  line-height: 200%; }
+
+/* line 37, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.center {
+  text-align: center; }
+
+/* line 41, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 40px; }
+
+/* line 49, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+#main_title_highlight {
+  font-size: 90px;
+  color: #7F8C8D; }
+
+/* line 54, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+h1 {
+  font-size: 36px; }
+
+/* line 58, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+h2 {
+  font-size: 26px; }
+
+/* line 62, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+h3 {
+  font-size: 20px; }
+
+/* line 66, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+p, ul, li {
+  font-size: 16px; }
+
+/* line 70, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+code {
+  font-family: Verdana, Geneva, sans-serif;
+  color: black;
+  background-color: #F2F4F9; }
+
+/* line 76, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+#main {
+  margin-top: 10px; }
+
+/* line 80, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+aside {
+  font-size: 14px; }
+  /* line 83, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+  aside h2 {
+    font-size: 14px;
+    font-weight: 700; }
+  /* line 88, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+  aside li {
+    font-size: 14px; }
+  /* line 92, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+  aside ul {
+    list-style-type: none;
+    padding: 0 0 0 0; }
+
+/* line 99, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.est-reading-time {
+  color: #95A5A6;
+  font-size: 14px; }
+
+/* line 104, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.hb-link {
+  color: #95A5A6;
+  font-size: 14px;
+  margin-top: 40px;
+  margin-bottom: 20px; }
+
+/* line 111, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.cheatsheet_category {
+  margin-bottom: 10px; }
+
+/* line 115, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.cheatsheet {
+  font-size: 16px; }
+  /* line 116, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+  .cheatsheet h1 {
+    margin-bottom: 40px; }
+  /* line 120, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+  .cheatsheet h3 {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 0 0;
+    color: #2980B9; }
+  /* line 127, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+  .cheatsheet p {
+    font-size: 16px; }
+
+/* line 133, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+p > img {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+/* line 138, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+#site_brand {
+  padding-left: 6px;
+  margin: 0;
+  font-variant: small-caps;
+  text-transform: lowercase; }
+
+/* line 145, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.navbar-brand {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400; }
+
+/* line 151, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.navbar .logo {
+  background: url("/images/firstofficer_logo_inverse.svg");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: 20px;
+  padding-left: 50px;
+  margin-right: 0px;
+  padding-right: 0px;
+  font-weight: normal;
+  font-size: 18px;
+  color: #1abc9c;
+  line-height: 24px;
+  text-transform: capitalize;
+  font-variant: small-caps; }
+
+/* line 170, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.navbar {
+  border-radius: 0px;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase; }
+
+/* line 178, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.navbar-nav > li > a {
+  font-weight: 400;
+  font-size: 12px; }
+
+/* line 183, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-top: 40px; }
+
+/* line 190, /Users/ajay/fo/metrics/source/stylesheets/base.css.scss */
+.jaana {
+  border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px; }

@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
+  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/flat-ui.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/base.css" rel="stylesheet" type="text/css" />
+  <title>FirstOfficer.io - Why do I need 3 Churn Rates?</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand toolbar_logo logo" href="http://www.firstofficer.io">FirstOfficer</a>
+    <a class="navbar-brand" id="site_brand" href="/">/ Metrics Learning Center</a>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/news-and-updates">News and Updates</a>
+      </li>
+      <li>
+        <a href="http://www.turbineroom.com/blog">BLOG</a>
+      </li>
+      <li>
+        <a class="navbar-brand" href="/contact-support/">CONTACT SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='container' id="main" role="main">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7">
+        <div class="est-reading-time">
+  This article takes 5 minutes to read
+</div>
+
+<h1 id="why-do-i-need-3-different-churn-rates">Why do I need 3 different Churn Rates?</h1>
+
+<p>Have you ever wondered why there are so many different Churn Rates? What’s the point?</p>
+
+<p>Let’s find out! Even though this article does not answer a direct business question,
+it’s important to understand how the Churn Rates work.</p>
+
+<p>When you understand the differences, you’ll be able to answer questions like:</p>
+
+<ul>
+  <li>“If I’d lose my main acquisition channel, how long would my business survive?”</li>
+  <li>“Am I losing high-value or low-value customers?”</li>
+  <li>“Can I trust my Customer Life-Time Values?”</li>
+</ul>
+
+<p>And more importantly - you can be confident that you answers aren’t wrong.</p>
+
+<h2 id="how-do-the-churn-rates-differ">How do the Churn Rates differ?</h2>
+<p>The table below lists the Churn Rates and their features.
+￼
+<img src="../../images/churn_rate_comparison_table.png" /></p>
+
+<p>Subscription, User and Customer Churn should be calculated separately
+if necessary.
+They are used for the same purposes and they are often the same number,
+so only Subscription Churn is listed in the table.</p>
+
+<h3 id="whats-normalization">What's normalization?</h3>
+
+<p>Normalization means that the effect of time is taken into consideration.</p>
+
+<p>When talking about Churn, normalization requires 2 actions.</p>
+
+<p>Normalized Churn Rate:</p>
+
+<ol>
+  <li>
+    <p>Only includes customers who had a subscription up for renewal
+and were able to churn, not everyone</p>
+  </li>
+  <li>
+    <p>Converts the Churn Rate from annual subscriptions into a monthly Churn Rate.</p>
+  </li>
+</ol>
+
+<h2 id="rule-of-thumb-for-using-the-churn-rates">Rule of thumb for using the Churn Rates</h2>
+
+<p><strong>Normalized rates tell you about the behavior of a single average customer.</strong></p>
+
+<p><strong>The non-normalized rates tell you about your business as whole.</strong></p>
+
+<p>That means we’ll use Net MRR Churn Rate for financial projections and
+estimating how the whole customer base behaves.</p>
+
+<p>And we’ll use Subscription and MRR Churn Rates for estimating average customer behavior.</p>
+
+<p><em>FirstOfficer.io shows Net MRR Churn Rate, MRR Churn Rate and Subscription Churn Rate.</em></p>
+
+<h2 id="why-cant-i-use-just-one-churn-rate">Why can’t I use just one Churn Rate?</h2>
+
+<p>You can - as long as you offer just one plan and no annual subscriptions.</p>
+
+<p>The one Churn Rate you’d start with is the Net Subscription Churn Rate - lost
+subscriptions compared to the subscriptions you had at the beginning of the month.</p>
+
+<p>Net Subscription Churn Rate is easy to calculate and can be
+ used for almost anything - but its meaning changes when your business develops.</p>
+
+<p><strong>It gradually stops working for the purposes you initially used it for.</strong></p>
+
+<p>When you add more plans, you should start using MRR Churn Rates so
+that you can see if people in different plans behave differently.</p>
+
+<p>When you add annual plans, you should start using normalized
+Churn Rates when you want to calculate unit metrics
+like Customer Life-Time Value (CLTV).</p>
+
+<h3 id="what-happens-if-unit-metrics-are-calculated-with-non-normalized-rates">What happens if unit metrics are calculated with non-normalized rates?</h3>
+
+<p>You might get worried that your business performance is crashing - when you
+just had lots of annual subscriptions up for renewal.
+Or you may believe that your CLTV values are 3-5 times higher than they actually are.</p>
+
+<p>The effect is not theoretical - I've seen cases like above.</p>
+
+<p>Here is an example:
+<br />
+<img src="../../images/churn_normalization.png" />
+<br />
+In this example your overall customer base shrinks at 10% monthly rate.
+  Average customers however, when having an opportunity to churn, leave at 20% monthly rate.</p>
+
+<h2 id="how-to-answer-the-business-questions">How to answer the business questions?</h2>
+
+<p>Now we can look at the questions in the beginning of the article again.</p>
+
+<h3 id="if-id-lose-my-main-acquisition-channel-how-long-would-my-business-survive">“If I’d lose my main acquisition channel, how long would my business survive?”</h3>
+
+<p>What if… you stopped getting new customers? How long would it take to lost all the monthly subscription revenue?</p>
+
+<p>This question concerns your whole customer base and you are interested in money (vs. subscriptions).
+  That means we use Net MRR Churn.</p>
+
+<p>Just invert it…
+<code>(1/churn rate) *100%</code>
+  … and you have the answer in months.</p>
+
+<p>Here are a couple of pre-calculated values:
+  <br />
+  <img src="../../images/churn_rate_to_lifetime.png" />  ￼
+<br />
+  It's not the most accurate formula, but works fine with rates smaller
+   than 10% and it's a rough estimate anyway. In practice, you'd use this churn rate to create a projection which includes also the expenses and your cashflow.</p>
+
+<p>Net Churn Rates are sometimes volatile, so it’s best to take an average churn rate from a longer period and check that the annual customers are evenly distributed throughout the year.</p>
+
+<h3 id="am-i-losing-high-value-or-low-value-customers">“Am I losing high-value or low-value customers?”</h3>
+<p>This question is about the average lost customer - so we need the normalized Churn Rates.</p>
+
+<p>One of our Churn Rates measures money, the other people.
+  If we lose more people than money, we lose low-value customers.
+  And if we lose more money than people, we lose high-value customers.</p>
+
+<p>When we <a href="/answers/lost-customer-value/">compare the MRR Churn Rate to Subscription Churn Rate</a> and the MRR Churn Rate is bigger, you lost high-value customers. If the MRR Churn Rate is the better one, you lost low-value customers.</p>
+
+<h3 id="can-i-trust-my-customer-life-time-values">“Can I trust my Customer Life-Time Values?”</h3>
+
+<p>The simple answer is 'No'.</p>
+
+<p>The non-profit-based CLTV should always be adjusted with gross profit margin - and even after that it is often not reliable even when calculated right.
+As you just learned, when your churn rates are low enough, CLTV tries to estimate behaviour years onwards.</p>
+
+<p>Jason Cohen has an excellent article on this topic:
+<a href="http://blog.asmartbear.com/ltv-cancellations-metric.html">The mistake of 1/c in LTV calculations</a>.</p>
+
+<p>That said, if you choose to use CLTV, here's the key to assess it:</p>
+
+<p><strong>The calculations are for your <em>average</em> customer.</strong></p>
+
+<p>If you mostly lose high-value customers, the CLTV will be overestimated.</p>
+
+<p>If you lose low-value customers, the CLTV will be underestimated.</p>
+
+<p>So you can actually use the answer from the previous question to answer this one.</p>
+
+<p>If your MRR Churn Rate and Subscription Churn Rate are similar, the CLTV’s are trustworthy.
+But also check that the ARPU of new customers isn't very different from the ARPU of all customers.</p>
+
+<p>Often a single CLTV value for whole customer base is useless unless you
+offer a single monthly plan. Most SaaS businesses should use plan-specific CLTV values.</p>
+
+<p>It’s also worth to follow up the realized Total Contract Values (TCV) - sometimes even per cohort.</p>
+
+      </div>
+      <div class="hidden-xs hidden-sm col-md-1 col-lg-2">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <aside>
+  <h2>Answer Business Questions</h2>
+  <ul>
+    <li>
+      <a href="/answers/lost-customer-value/">Am I losing high-value customers?</a>
+    </li>
+  </ul>
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="/docs/stripe-api-best-practices/">Best Practices for Using Stripe API</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-use-arpu/">How to use ARPU</a>
+    </li>
+    <li>
+      <a href="/docs/how_to_use_different_churn_rates/">Why do I need 3 Churn Rates?</a>
+    </li>
+  </ul>
+  <h2>Cheat Sheets</h2>
+  <ul>
+    <li>
+      <a href="/saas-metrics/churn-baseline/">Churn Baseline</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/arpu/">Average Revenue Per User - ARPU</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/saas-metrics-glossary/">SaaS Metrics Glossary</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/customer-churn-rate/">Churn Rate (Customers)</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/expansion-vs-upgrade-mrr/">Expansion vs. Upgrade, the Difference</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/cmrr/">Committed MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/growth-ceiling/">Growth Ceiling</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/mrr/">Monthly Recurring Revenue - MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/normalized-revenue/">Normalized Subscription Revenue</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/prepaid-mrr/">Prepaid MRR</a>
+    </li>
+  </ul>
+  <h2>FAQ</h2>
+  <ul>
+    <li>
+      <a href="/answers/metrics-not-like-expected/">My numbers aren't what I expected - Why?</a>
+    </li>
+  </ul>
+  <h2>FirstOfficer.io Documentation</h2>
+  <ul>
+    <li>
+      <a href="/docs/importing-non-stripe-payments/">Importing Non-Stripe Payments</a>
+    </li>
+    <li>
+      <a href="/docs/analytics_calculation_principles/">Calculation Principles</a>
+    </li>
+    <li>
+      <a href="/docs/calculation_principles_annual_refunds/">Calculation Principles - Annual Subscription Refunds</a>
+    </li>
+    <li>
+      <a href="/docs/quantity_handling/">Booking of Capacity-Based Charges</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-calculate-prepaid-MRR/">Calculation Principles - Prepaid MRR</a>
+    </li>
+    <li>
+      <a href="/docs/weekly-email-report/">How to read the Weekly Email Report</a>
+    </li>
+    <li>
+      <a href="/docs/annual-report/">How to read the Annual Report</a>
+    </li>
+    <li>
+      <a href="/docs/dashboard-customization/">Dashboard Customization</a>
+    </li>
+  </ul>
+</aside>
+
+      </div>
+    </div>
+    <div class='footer'>
+© 2014-2016 FirstOfficer.io by Turbine Room Ltd. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>

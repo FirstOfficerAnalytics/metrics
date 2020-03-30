@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
+  <link href="../stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/flat-ui.css" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/base.css" rel="stylesheet" type="text/css" />
+  <title>FirstOfficer.io</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand toolbar_logo logo" href="http://www.firstofficer.io">FirstOfficer</a>
+    <a class="navbar-brand" id="site_brand" href="/">/ Metrics Learning Center</a>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/news-and-updates">News and Updates</a>
+      </li>
+      <li>
+        <a href="http://www.turbineroom.com/blog">BLOG</a>
+      </li>
+      <li>
+        <a class="navbar-brand" href="/contact-support/">CONTACT SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='container' id="main" role="main">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <h1 id="main_title">FirstOfficer News and Updates</h1>
+
+<h2>Apr 16, 2019 <a href="/news-and-updates/2019-04-16-revenue-bug/">Fix for Extra Revenue Bug</a> </h2>
+<p>
+  <p>If your historical revenue numbers have changed this week, it's because of this fix.</p>
+
+<p>Some time ago Stripe changed the uniqueness of one of the item identifiers. As I implemented support for this change, I introduced a bug that caused some invoice lines to be imported twice.</p>
+
+<p>That's why some of the revenue also got booked twice.</p>
+
+<p>I'm running a fix to remove the extra lines and recalculate the revenue again. The work should be over by the end of the week. I'm sorry for this.</p>
+
+  </p>
+
+<h2>Mar 21, 2018 <a href="/news-and-updates/2018-03-21-end-of-term-subscriptions/">Now showing end-of-term subscriptions by plan</a> </h2>
+<p>
+  <p>"MRR Waiting For Renewal" view now shows also the End-of-Term Subscription MRR and count.</p>
+
+<p>Knowing how many subscriptions are up for renewal in each month is important information for cash-flow planning purposes. FirstOfficer already shows the summary of this information in Metrics view. However, if you have 3-month or 6-month plans, the annual and monthly summaries in Metrics view are not enough.</p>
+
+<p>To access Waiting For Renewal view, go to the MRR view and click the numbers in the "Waiting for Renewal column" in the main data table. When you are in Waiting for Renewal view, use the green arrows in upper left corner to move between months.</p>
+
+  </p>
+
+<h2>Jan 20, 2018 <a href="/news-and-updates/2018-01-20-better-performance/">Better DB performance</a> </h2>
+<p>
+  <p>The news have not been updated for a while, but things are going forward under the hood. Here are the contributions to FirstOfficer's Github repos:
+<img width="800" src="../images/2017-github-contributions.png" /></p>
+
+<p>FirstOfficer had some growth pains that needed to be addressed. At the moment the DB performance is at OK level, but further work is expected as the dataset grows.</p>
+
+<p>There has also been a lot of internal support dashboard and automation work.</p>
+
+<p>There have been some minor UI additions and improvements.</p>
+
+  </p>
+
+<h2>Nov  9, 2016 <a href="/news-and-updates/2016-11-09-support_for_special_case_annual_switch/">Special case support for switching between annual subscriptions</a> </h2>
+<p>
+  <p>In some special cases, FirstOfficer did not book upgrades between annual plans right. Events were missing from the period between the proration and the new subscription start date. </p>
+
+<p>The problem is now fixed and the metrics are being regenerated for the handful of you who were affected. </p>
+
+<p>The current total of automated tests in FirstOfficer for catching special cases like this is 289, 
+so hopefully we are approaching the point where most of the special events from Stripe are handled right.  </p>
+
+
+  </p>
+
+<h2>Oct 26, 2016 <a href="/news-and-updates/2016-10-26-imported_payments_quantity_support/">Support for quantities in non-Stripe invoices</a> </h2>
+<p>
+  <p>This change only affects invoices imported manually or through the API. It does not affect invoices in Stripe.</p>
+
+<p><strong>Problem:</strong> It has not been possible to add seats/quantities to existing subscription when importing non-Stripe invoices.</p>
+
+<p><strong>Solution:</strong> If 'subscription ID' is filled, FirstOfficer will add quantities into the subscription referenced instead of creating a new subscription.</p>
+
+
+  </p>
+
+<h2>Oct  5, 2016 <a href="/news-and-updates/2016-10-05-news/">Changes to churn recognition</a> </h2>
+<p>
+  <p><strong>Problem:</strong> FirstOfficer marks customer as lost immediately when charging fails. 
+But what should be done when invoice is not created? </p>
+
+<p>If loss of customer is probable and we do not mark the customer as lost, the MRR estimate will be temporarily too high.</p>
+
+<p>If retention is probable and we mark the customer as lost, the losses will be temporarily overestimated. </p>
+
+<p><strong>Old Solution:</strong> Wait 14 days and then mark customer as lost. </p>
+
+<p>Majority of missing invoices were caused by rare delays in Stripe invoicing. The invoices were eventually always sent. 
+  However, when <a href="http://apidocs.firstofficer.io/">FirstOfficer API</a> was added, we now face an increasing amount of 
+  missing invoices where the loss of the customer is probable. 14-day wait period prevents you from getting the churn information in time. </p>
+
+<p><strong>New Solution:</strong> For non-Stripe invoices, wait 6 hours and then mark customer as lost. For Stripe invoices, wait 4 days and then mark customer as lost.</p>
+
+<p>This solution should ensure timely detection for real losses and still prevent false alarms from temporary system malfunctions.  </p>
+
+
+  </p>
+
+<h2>Aug 15, 2016 <a href="/news-and-updates/2016-08-15-news/">API in beta</a> </h2>
+<p>
+  <p><a href="http://apidocs.firstofficer.io/">FirstOfficer API</a> is now open for beta-testing. You can now import non-Stripe invoices programmatically.</p>
+
+
+  </p>
+
+<h2>Jun 30, 2016 <a href="/news-and-updates/2016-06-30-turbine_18/">Churn for 3-month and 6-month plans</a> </h2>
+<p>
+  <p>Do you have 3-month or 6-month plans? FirstOfficer now <a href="https://www.firstofficer.io/plan_metrics">shows the monthly churn and LTV for them too</a>. You still get the churn for the whole subscription period, just like before.</p>
+
+  </p>
+
+<h2>Jun  2, 2016 <a href="/news-and-updates/2016-06-02-turbine_16/">Export</a> </h2>
+<p>
+  <p>Do you need to export data from FirstOfficer? The export catalog is now open for beta-testing.</p>
+
+<p>View the <a href="https://www.firstofficer.io/exports/catalog">export catalog</a>.</p>
+
+<p>One of my own favourites is the possibility to export your cohort retention by plan. Enjoy!</p>
+
+  </p>
+
+<h2>Mar  3, 2016 <a href="/news-and-updates/2016-03-03-turbine_11/">Year report 2016</a> </h2>
+<p>
+  <p>You can now view the 2016 month-to-month comparison report in FirstOfficer. I also added a handy link to the upper right corner where you can view the older reports.</p>
+
+<p>View your <a href="https://www.firstofficer.io/annual_report?year=2016">2016 January-February report here</a></p>
+
+<p>There’s also a change in weekly email report. The 30-day revenue used to show only subscription revenue. From now on it will also include single purchases (non-subscription revenue).</p>
+
+  </p>
+
+<h2>Feb  4, 2016 <a href="/news-and-updates/2016-02-04-turbine_09/">Performance upgrade</a> </h2>
+<p>
+  <p>FirstOfficer had a performance upgrade. The updates are now running in half the time they used to take before. I hope you keep on reporting any performance issues.</p>
+
+<p>This improvement was important also because I was worried I’d have to stop taking new customers to ensure the service quality for the present customers. Now there is no urgent need for that.</p>
+
+  </p>
+
+<h2>Dec 10, 2015 <a href="/news-and-updates/2015-12-10-turbine_06/">Sorting the customers</a> </h2>
+<p>
+  <p>You can now sort the lost and paying customers by date, email, MRR and TCV. Just click the green column headers to sort by that column:</p>
+
+<p><img src="../images/feat_lost_sorting.png" /></p>
+
+<p>Why not use this feature right away to <a href="https://www.firstofficer.io/events?month=1446336000000&amp;sort=tcv&amp;sort_direction=desc">view your most valuable customers</a>? It might be nice to send them something for Christmas.</p>
+
+  </p>
+
+<h2>Nov 12, 2015 <a href="/news-and-updates/2015-11-12-turbine_04/">Start using Extra ID's for your customers</a> </h2>
+<p>
+  <p>Do you have an ID from a 3rd party system or some other identifying information you’d like to see when you view customers in FirstOfficer?</p>
+
+<p>You can now add that to Stripe metadata and FirstOfficer will show it to you. You can read more and activate the feature <a href="https://www.firstofficer.io/activate_ext_id">here</a> or access it from your account page.</p>
+
+  </p>
+
+<h2>Oct 29, 2015 <a href="/news-and-updates/2015-10-29-turbine_03/">Drilling down into the numbers</a> </h2>
+<p>
+  <p>Did you know that you can actually see the customers behind the MRR numbers?</p>
+
+<p>All the green numbers are links!</p>
+
+<p><img src="../images/feat_drilldown.png" /></p>
+
+  </p>
+
+<h2>Oct 15, 2015 <a href="/news-and-updates/2015-10-15-turbine_02/">Net MRR retention</a> </h2>
+<p>
+  <p>Pacific Crest has published IPO SaaS MRR retention numbers for your benchmark.</p>
+
+<p><a href="http://www.pacific-crest.com/saas-reporting-metrics/">Read their report here.</a></p>
+
+<p>To help you with the comparison, I added the MRR retention to the annual report view. It’s right there under the new MRR churn:</p>
+
+<p><img src="../images/new_feat_mrr_retention.png" /></p>
+
+<p><a href="https://www.firstofficer.io/annual_report">View yours here</a> in FirstOfficer.</p>
+
+<p>PS. Those Pacific Crest tables have different formulas and measurement periods happily mixed up, so keep your eyes peeled! Also, these are IPO numbers. Don’t be discouraged if you’re just starting and your numbers aren’t yet as good.</p>
+
+  </p>
+
+<h2>Oct  1, 2015 <a href="/news-and-updates/2015-10-01-turbine_01/">Searching customers with URL parameters</a> </h2>
+<p>
+  <p>Did you know you can now search customers with URL parameters?</p>
+
+<p>See who's using gmail:
+<a href="https://www.firstofficer.io/customers?email=gmail">https://www.firstofficer.io/customers?email=gmail</a></p>
+
+<p>Find a specific customer by their Stripe ID:
+<a href="https://www.firstofficer.io/customers?stripe_id=cus_xxx">https://www.firstofficer.io/customers?stripe_id=cus_xxx</a></p>
+
+  </p>
+
+<h2>Sep 21, 2015 <a href="/news-and-updates/2015-09-21-news/">Calculation Core Bug Fix</a> </h2>
+<p>
+  <p>In some rare cases FirstOfficer booked the same MRR twice. This should no longer happen.</p>
+
+<p>I have been removing the extra entries manually so your dashboards should be fine. 
+There will be extra consistency checks running this weekends that will fix any double entries that I might have missed.</p>
+
+
+  </p>
+
+<h2>Sep  5, 2015 <a href="/news-and-updates/2015-09-05-news/">Year-to-Date report</a> </h2>
+<p>
+  <p>Take a look at your year-to-date performance at the <a href="https://www.firstofficer.io/annual_report?year=2015">annual report 2015</a>.</p>
+
+<p>Also check out the 3-month retention trend in <a href="https://www.firstofficer.io/retention">the retention view</a>.</p>
+
+  </p>
+
+<h2>Sep  1, 2015 <a href="/news-and-updates/2015-older-news/">No more automatic redirects</a> </h2>
+<p>
+  <p>The new landing page no longer forwards you to the app automatically.</p>
+
+<p>Please update your bookmarks to point to this address instead: <a href="www.firstofficer.io/app">www.firstofficer.io/app</a></p>
+
+<h2 id="jun-12-2015---bug-alert-missing-upgrades">Jun 12, 2015 - Bug Alert! Missing Upgrades</h2>
+
+<p>Several customers have reported random missing upgrades in May/June.</p>
+
+<p>Stripe's functionality seems to have changed and it no longer sends required proration lines in advance. When the lines arrive FirstOfficer will book the upgrades, but the delay is not acceptable.</p>
+
+<p>The fix is under work, but it will take some time to get it ready as it requires reading Stripe Hooks - a totally new functionality.</p>
+
+<p>This problem does not affect Revenue, just MRR. My apologies for the inconvenience.</p>
+
+<h2 id="may-28-2015---bug-fix-to-detecting-invoices-paid-from-stripe-balance">May 28, 2015 - Bug fix to detecting invoices paid from Stripe balance</h2>
+<p>FirstOfficer was still marking some of the subscriptions paid from customer's balance as lost.</p>
+
+<p>In addition to fixing the bug, old losses were checked again for this problem. This may have caused small changes to your churn numbers.</p>
+
+<h2 id="may-16-2015---bug-fix-to-revenue-details-now-also-showing-other-plans">May 16, 2015 - Bug fix to revenue details, now also showing other plans.</h2>
+<p>Bug fix to Revenue View, annual and monthly plan gross revenue:
+Gross revenue now properly shows the revenue from prorations.</p>
+
+<p>Revenue View now also shows the plans that have a special subscription period, so you'll be able to sum up the revenue in different categories.</p>
+
+<h2 id="may-07-2015---churn-reason-detection">May 07, 2015 - Churn reason detection</h2>
+<p>FirstOfficer now finds out the exact reason for failed payments, ranging from software/API malfunction to invalid expiration year.</p>
+
+<p>From now on, churn is not booked until an invoice actually fails. If invoices are not charged on schedule, you'll see an alarm in the sidebar of the MRR View:</p>
+
+<p>invoices not charged in schedule </p>
+
+<p>As it's possible to prevent the invoices to be created/charged also through the Stripe API, any subscriptions that are not charged or invoiced will be added to churn after 14 days with an error code "Unknown reason".</p>
+
+<p>This change will affect all new failed payments and error codes for older failed payments will be updated separately within a week.</p>
+
+<h2 id="apr-15-2015---bug-fixes-arr-shown-in-metrics-view">Apr 15, 2015 - Bug fixes, ARR shown in Metrics View</h2>
+<p>Two bug fixes to calculation core: 
+Downgrades paid from customer balance are no longer marked as lost.
+Refunded downgrades that in some rare cases were not recognized, are now properly marked as losses.</p>
+
+<p>Annual Run Rate (ARR) is now visible in Metrics View, calculated with formula 12 x MRR.</p>
+
+<h2 id="apr-03-2015---patching-today-balance-payments-after-downgrade">Apr 03, 2015 - Patching today: balance payments after downgrade</h2>
+<p>When customer downgrades from annual plan, Stripe prorates the subscription and customer pays the monthly payments from his account balance until the annual payment is compensated. FirstOfficer has erroneously marked some of these customers as lost.</p>
+
+<p>Fortunately these aren't common. Today's patch will fix all the existing cases. Official bug fix is under work.</p>
+
+<h2 id="aug-21-2015---bug-fix-imported-payments-can-be-deleted">Aug 21, 2015 - Bug fix: Imported payments can be deleted</h2>
+<p>When you removed the last payment of the month, the metrics didn't update right. Fixed.</p>
+
+<h2 id="mar-17-2015---import-non-stripe-payments">Mar 17, 2015 - Import Non-Stripe Payments</h2>
+<p>You can now import non-Stripe payments into the system. More <a href="http://support.firstofficer.io/docs/importing-non-stripe-payments/">information and instructions here</a>.</p>
+
+<h2 id="jan-01-2015---annual-report-2014">Jan 01, 2015 - Annual Report 2014</h2>
+<p><a href="https://www.firstofficer.io/annual_report">Annual Report 2014</a> gives you an overview of the year and helps to communicate your SaaS growth.</p>
+
+<p><a href="http://support.firstofficer.io/docs/annual-report/">Instructions for reading the report</a>.</p>
+
+<p>Happy and prosperous New Year 2015!</p>
+
+<h2 id="dec-22-2014---fix-and-enhancement-to-weekly-mrr-growth-chart">Dec 22, 2014 - Fix and enhancement to Weekly MRR Growth Chart</h2>
+<p>If customer ended his subscription at 5th and created a new subscription at 25th, the contraction and expansion were shown at different weeks. Even though that was what really happened, it added noise and made the Weekly MRR Growth Chart harder to use.</p>
+
+<p>Upgrades and downgrades are now shown as one entry, when possible.</p>
+
+<p><img src="../images/dec_14_weekly_chart_change.png" /></p>
+
+<p>There was also a bug, which left out some of the downgrades in weekly chart. This only affected losses that were refunded later. It happened because the refunded losses are booked at 23:59:59:999 and the DB queries considered the week to end at 23:59:59:0000. The queries are now fixed.</p>
+
+<p>Both of the problems affected only the Weekly MRR Growth Chart.</p>
+
+<p>The actual bookings and the Monthly MRR Growth Chart were not affected.</p>
+
+<p>If this change affected your dashboard in a noticeable way, you have received an email explaining the impact. I'm sorry for the inconvenience this may have caused.</p>
+
+<h2 id="dec-01-2014---improved-upgrades--downgrades-view">Dec 01, 2014 - Improved Upgrades &amp; Downgrades View</h2>
+
+<p>The improved Upgrades &amp; Downgrades View is now activated. The old view is not available anymore, but you can find similar per-customer listings by clicking the links in the new view.</p>
+
+<h2 id="nov-25-2014---celebration">Nov 25, 2014 - Celebration!</h2>
+
+<p>It's six months from the launch and FirstOfficer.io reached an important MRR milestone last week. All because of You. 
+Thank you for being an awesome customer!</p>
+
+<p>The update capacity has been increased and from now on your dashboard will update once per hour.</p>
+
+<p>All plans now include the Sunday <a href="http://support.firstofficer.io/docs/weekly-email-report/">email report</a> - or any day email report, it's possible to <a href="http://support.firstofficer.io/docs/dashboard-customization/">customize when your week starts</a>.</p>
+
+<h2 id="nov-18-2014---major-update-in-how-quantities--capacity-based-charging-are-handled">Nov 18, 2014 - Major update in how quantities &amp; capacity-based charging are handled</h2>
+
+<p>Now detects changes in quantities sooner and uses the real amount from upcoming invoice to determine the change in MRR.</p>
+
+<p>Handles quantity changes right also when plan changes happen at the same month.</p>
+
+<p>The quantity bookings are explained in article <a href="http://support.firstofficer.io/docs/quantity_handling/">Booking of Capacity-Based Charges</a>.</p>
+
+<p>The new Upgrades &amp; Downgrades View is available for beta (except for customers with merged plans).</p>
+
+<h2 id="oct-17-2014---improvements-to-mrr-view">Oct 17, 2014 - Improvements to MRR View</h2>
+
+<p>The MRR View now lets you drill down to the end of month MRR Estimate. 
+Just click at the green MRR estimate figures and see who have already paid and who should pay you next.</p>
+
+<h2 id="oct-17-2014---support-for-stripe-quantities--capacity-based-charging-backend">Oct 17, 2014 - Support for Stripe quantities &amp; capacity-based charging (backend)</h2>
+
+<p>FirstOfficer.io now tracks changes in subscription quantities and books them along the other upgrades &amp; downgrades.</p>
+
+<p>It also tracks other changes. So if you charged $15/month last month and just modified the plan, the change will be detected as upgrade/downgrage.</p>
+
+<p>Also changes in currency exchange rate will be detected and shown in upgrades/downgrades.</p>
+
+<p>I'm working on Upgrades/Downgrades View to show the capacity changes separately. Until that the changes are shown along with all the other upgrades and downgrages.</p>
+
+<h2 id="oct-17-2014---improvements-to-multi-currency-support">Oct 17, 2014 - Improvements to multi-currency support</h2>
+
+<p>Until now, FirstOfficer.io has shown your dashboard in the currency that your bank account uses. But Stripe recently added Refund objects to their API. So I can now offer your dashboard in USD and still double-check everything automatically.</p>
+
+<p>If you want your dashboard to be converted in USD, please send an email to support@firstofficer.io.</p>
+
+<h2 id="sep-16-2014---analytics-learning-center">Sep 16, 2014 - Analytics Learning Center</h2>
+
+<p>I'm proud to present <a href="http://support.firstofficer.io/">the Metrics &amp; Analytics Learning Center</a>.</p>
+
+<h2 id="aug-29-2014---merge-plans">Aug 29, 2014 - Merge plans</h2>
+<p>Do you have several plans with the same name and interval, but with different prices or Stripe ids? 
+Would you like to view them as one plan in MRR and Metrics view? Now you can.</p>
+
+<p>To activate the plan merge feature, please send an email to support@firstofficer.io.</p>
+
+<h2 id="aug-21-2014---tooltip-date-labels-fixed">Aug 21, 2014 - Tooltip date labels fixed</h2>
+<p>The tooltips in MRR, MRR Growth and Retention view have been showing incorrect month names. The x-axis labels below the charts have been showing the correct information. </p>
+
+<p>This bug has affected you if you are located in timezones UTC-1 - UTC-11. I apologize for any confusion this has caused.</p>
+
+<h2 id="aug-10-2014---invite-your-team-members">Aug 10, 2014 - Invite your team members</h2>
+
+<p>You can now give own accounts to your team members. Just visit your account page and invite them! 
+You can invite max. 10 people.</p>
+
+<h2 id="jul-20-2014---support-for-charging-one-time-setup-fees-using-customer-balance">Jul 20, 2014 - Support for charging one-time setup fees using customer balance</h2>
+
+<p>If you have been charging one-time fees by <a href="https://support.stripe.com/questions/subscription-setup-fees">setting an account balance when customer is created</a> , the setup fee has not been reported correctly in FirstOfficer.io.</p>
+
+<p>From now on, the setup fees will be correctly reported as single purchases and will be visible in revenue view. 
+However, the recommended way to charge setup fees is to <a href="https://support.stripe.com/questions/metered-subscription-billing">create an invoice item before subscription is created</a>.</p>
+
+<h2 id="jul-13-2014---email-reports">Jul 13, 2014 - Email reports</h2>
+
+<p>From now on, everyone on Startup plan and above will receive a weekly metrics email report.</p>
+
+  </p>
+
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <aside>
+  <h2>Answer Business Questions</h2>
+  <ul>
+    <li>
+      <a href="/answers/lost-customer-value/">Am I losing high-value customers?</a>
+    </li>
+  </ul>
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="/docs/stripe-api-best-practices/">Best Practices for Using Stripe API</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-use-arpu/">How to use ARPU</a>
+    </li>
+    <li>
+      <a href="/docs/how_to_use_different_churn_rates/">Why do I need 3 Churn Rates?</a>
+    </li>
+  </ul>
+  <h2>Cheat Sheets</h2>
+  <ul>
+    <li>
+      <a href="/saas-metrics/churn-baseline/">Churn Baseline</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/arpu/">Average Revenue Per User - ARPU</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/saas-metrics-glossary/">SaaS Metrics Glossary</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/customer-churn-rate/">Churn Rate (Customers)</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/expansion-vs-upgrade-mrr/">Expansion vs. Upgrade, the Difference</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/cmrr/">Committed MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/growth-ceiling/">Growth Ceiling</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/mrr/">Monthly Recurring Revenue - MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/normalized-revenue/">Normalized Subscription Revenue</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/prepaid-mrr/">Prepaid MRR</a>
+    </li>
+  </ul>
+  <h2>FAQ</h2>
+  <ul>
+    <li>
+      <a href="/answers/metrics-not-like-expected/">My numbers aren't what I expected - Why?</a>
+    </li>
+  </ul>
+  <h2>FirstOfficer.io Documentation</h2>
+  <ul>
+    <li>
+      <a href="/docs/importing-non-stripe-payments/">Importing Non-Stripe Payments</a>
+    </li>
+    <li>
+      <a href="/docs/analytics_calculation_principles/">Calculation Principles</a>
+    </li>
+    <li>
+      <a href="/docs/calculation_principles_annual_refunds/">Calculation Principles - Annual Subscription Refunds</a>
+    </li>
+    <li>
+      <a href="/docs/quantity_handling/">Booking of Capacity-Based Charges</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-calculate-prepaid-MRR/">Calculation Principles - Prepaid MRR</a>
+    </li>
+    <li>
+      <a href="/docs/weekly-email-report/">How to read the Weekly Email Report</a>
+    </li>
+    <li>
+      <a href="/docs/annual-report/">How to read the Annual Report</a>
+    </li>
+    <li>
+      <a href="/docs/dashboard-customization/">Dashboard Customization</a>
+    </li>
+  </ul>
+</aside>
+
+      </div>
+    </div>
+    <div class='footer'>
+© 2014-2016 FirstOfficer.io by Turbine Room Ltd. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>

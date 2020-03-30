@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
+  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/flat-ui.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/base.css" rel="stylesheet" type="text/css" />
+  <title>FirstOfficer.io - Best Practices for Using Stripe API</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand toolbar_logo logo" href="http://www.firstofficer.io">FirstOfficer</a>
+    <a class="navbar-brand" id="site_brand" href="/">/ Metrics Learning Center</a>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/news-and-updates">News and Updates</a>
+      </li>
+      <li>
+        <a href="http://www.turbineroom.com/blog">BLOG</a>
+      </li>
+      <li>
+        <a class="navbar-brand" href="/contact-support/">CONTACT SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='container' id="main" role="main">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7">
+        <div class="est-reading-time">
+  This article takes 3 minutes to read
+</div>
+
+<h1 id="best-practices-for-using-stripe-api">Best Practices for Using Stripe API</h1>
+
+<p>There are some things you shouldn't do with the Stripe API,
+if you want your analytics to work out-of-the-box.</p>
+
+<p>These are valid ways to use the API and some of them are presented in Stripe documentation  - but
+they can break your metrics.</p>
+
+<p>In some cases the data can be patched to get the metrics right,
+but that's always extra effort for you.</p>
+
+<h2 id="dont-lose-money-when-refunding-prorated-subscriptions">1. Don't lose money when refunding prorated subscriptions</h2>
+
+<p>When you refund a subscription during a plan change:</p>
+
+<ol>
+  <li>Give the refund</li>
+  <li>Delete/close the old subscription</li>
+  <li>Create the new subscription</li>
+</ol>
+
+<p>Another option is to run
+the <a href="https://stripe.com/docs/api#update_subscription">subscription change</a>
+with a prorate:false option that disables prorations.</p>
+
+<p>If you don't refund the full amount, you'll have to modify the
+account_balance by the amount refunded instead.</p>
+
+<p><strong>What's the problem?</strong></p>
+
+<p>You may accidentally waive customer's fees for several months.</p>
+
+<p>The <a href="https://groups.google.com/a/lists.stripe.com/forum/#!msg/api-discuss/241UNrGUaSI/J89Z5ZMsOfAJ">refunds aren't reduced from the subscription amount in the proration</a>.</p>
+
+<p>So even though you refunded the subscription, the subscription will be prorated
+as no refund had happened - and customer now has account_balance from where he can pay his future fees.</p>
+
+<h2 id="avoid-using-accountbalance">2. Avoid using account_balance</h2>
+
+<p>Try to avoid modifying Stripe customer's account_balance.</p>
+
+<p><strong>What's the problem?</strong></p>
+
+<p>Amounts charged or discounted via account balance may not get booked right.</p>
+
+<p>In many cases it's impossible to differentiate account_balance
+that you set from the account_balance that Stripe sets when doing prorations,
+so the support cannot be added.</p>
+
+<p>FirstOfficer.io recognizes
+setup fees from balance, but not discounts or non-Stripe-payments.</p>
+
+<p>You can't always avoid using account_balance, but avoid using it when possible.</p>
+
+<p>Here are a couple of examples:</p>
+
+<h3 id="give-discounts-with-discount-coupons-not-with-accountbalance-or-invoice-items-with-negative-amount">Give discounts with discount coupons, not with account_balance or invoice items with negative amount</h3>
+
+<p>When you create a proper discount coupon and set to the customer, you
+can be sure that the discounts get booked right.</p>
+
+<h3 id="charge-setup-fees-with-an-extra-invoice-item-not-with-accountbalance">Charge setup fees with an extra invoice item, not with account_balance</h3>
+
+<p>When you create an
+<a href="https://support.stripe.com/questions/metered-subscription-billing">invoice item before creating the subscription</a> for the customer,
+the setup fee gets charged in it's own line with the first
+invoice - and analytics apps will know it's a separate charge.</p>
+
+<h3 id="do-use-account-balance-when-customer-pays-in-advance">Do use account balance when customer pays in advance</h3>
+
+<p>If the customer wants to pay his subscription in advance, you can create a
+charge that puts the amount paid to his account balance.</p>
+
+<p>This balance will be used to pay
+his subscription later and FirstOfficer recognizes the MRR.</p>
+
+<h2 id="only-create-cent-plans-if-you-really-use-them">3. Only create cent-plans if you really use them</h2>
+
+<p>Stripe allows you to create $0.01 plans, which don't get charged until the balance exceeds $0.50.</p>
+
+<p>You might be tempted to put your free plan users to this plan and sneak them into the system. Don't do that.</p>
+
+<p><strong>What's the problem?</strong></p>
+
+<p>Your metrics will get watered down with users that should be excluded from the numbers. The cent-plans are meant for
+<a href="https://support.stripe.com/questions/how-can-i-create-plans-that-dont-have-a-fixed-price">capacity-based charging</a>,
+so they will be processed.</p>
+
+<h2 id="avoid-renaming-plans-if-you-have-prorations-before-aug-2014">4. Avoid renaming plans if you have prorations before Aug 2014</h2>
+
+<p>If you have prorations that were created before August 2014, consider creating a new plan instead of renaming an old plan.</p>
+
+<p>If you rename plans, make sure your new plan name does not overlap with the old ones.</p>
+
+<p><strong>What's the problem?</strong></p>
+
+<p>All upgrades and downgrades may not get booked to right plans.</p>
+
+<p>Since 2014/7/22, Stripe API now returns plan_id with prorated lines, but some older lines still don't
+have them and the plan name needs to parsed from the description.</p>
+
+<p>You can <a href="/contact-support/">contact support</a>
+ and we can check if it's safe to rename plans.</p>
+
+<h2 id="avoid-deleting-stripe-customer-when-customer-is-lost">5. Avoid deleting Stripe customer when customer is lost</h2>
+
+<p>Do clean up the credit card information and any other information that you
+aren't allowed to keep,
+but do not delete the customer from Stripe, if possible.</p>
+
+<p><strong>What's the problem?</strong></p>
+
+<p>When your metrics are shown, you can't identify your old customers.</p>
+
+<h2 id="dont-create-a-new-stripe-customer-for-returning-customers">6. Don't create a new Stripe customer for returning customers</h2>
+
+<p>When a customer returns, reuse his old Stripe customer.</p>
+
+<p><strong>What's the problem?</strong></p>
+
+<p>The returning customers will get booked as new customers.</p>
+
+<p>The Total Contract Values can not be calculated accurately when payments
+are scattered in different Stripe customers.</p>
+
+<p>You will have extra trouble if you need
+to find out everything that the customer did.</p>
+
+<h2 id="only-use-3rd-party-subscription-plugins-that-create-stripe-subscriptions">7. Only use 3rd party subscription plugins that create Stripe subscriptions</h2>
+
+<p>Many plugins which help you manage Stripe subscriptions bypass Stripe subscriptions altogether.</p>
+
+<p>There are some plugins, like <a href="http://koudoku.org">Koudoku</a> and <a href="https://www.payola.io">Payola</a>,
+which do utilise Stripe subscriptions and work with analytics apps.
+However, at the time of writing Payola is using account_balance to handle setup fees.</p>
+
+<p><strong>What's the problem?</strong></p>
+
+<p>If you don't use Stripe subscriptions your revenue will be booked as single charges instead of MRR.</p>
+
+      </div>
+      <div class="hidden-xs hidden-sm col-md-1 col-lg-2">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <aside>
+  <h2>Answer Business Questions</h2>
+  <ul>
+    <li>
+      <a href="/answers/lost-customer-value/">Am I losing high-value customers?</a>
+    </li>
+  </ul>
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="/docs/stripe-api-best-practices/">Best Practices for Using Stripe API</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-use-arpu/">How to use ARPU</a>
+    </li>
+    <li>
+      <a href="/docs/how_to_use_different_churn_rates/">Why do I need 3 Churn Rates?</a>
+    </li>
+  </ul>
+  <h2>Cheat Sheets</h2>
+  <ul>
+    <li>
+      <a href="/saas-metrics/churn-baseline/">Churn Baseline</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/arpu/">Average Revenue Per User - ARPU</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/saas-metrics-glossary/">SaaS Metrics Glossary</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/customer-churn-rate/">Churn Rate (Customers)</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/expansion-vs-upgrade-mrr/">Expansion vs. Upgrade, the Difference</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/cmrr/">Committed MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/growth-ceiling/">Growth Ceiling</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/mrr/">Monthly Recurring Revenue - MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/normalized-revenue/">Normalized Subscription Revenue</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/prepaid-mrr/">Prepaid MRR</a>
+    </li>
+  </ul>
+  <h2>FAQ</h2>
+  <ul>
+    <li>
+      <a href="/answers/metrics-not-like-expected/">My numbers aren't what I expected - Why?</a>
+    </li>
+  </ul>
+  <h2>FirstOfficer.io Documentation</h2>
+  <ul>
+    <li>
+      <a href="/docs/importing-non-stripe-payments/">Importing Non-Stripe Payments</a>
+    </li>
+    <li>
+      <a href="/docs/analytics_calculation_principles/">Calculation Principles</a>
+    </li>
+    <li>
+      <a href="/docs/calculation_principles_annual_refunds/">Calculation Principles - Annual Subscription Refunds</a>
+    </li>
+    <li>
+      <a href="/docs/quantity_handling/">Booking of Capacity-Based Charges</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-calculate-prepaid-MRR/">Calculation Principles - Prepaid MRR</a>
+    </li>
+    <li>
+      <a href="/docs/weekly-email-report/">How to read the Weekly Email Report</a>
+    </li>
+    <li>
+      <a href="/docs/annual-report/">How to read the Annual Report</a>
+    </li>
+    <li>
+      <a href="/docs/dashboard-customization/">Dashboard Customization</a>
+    </li>
+  </ul>
+</aside>
+
+      </div>
+    </div>
+    <div class='footer'>
+© 2014-2016 FirstOfficer.io by Turbine Room Ltd. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>

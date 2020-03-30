@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
+  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/flat-ui.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/base.css" rel="stylesheet" type="text/css" />
+  <title>FirstOfficer.io - Booking of Capacity-Based Charges</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand toolbar_logo logo" href="http://www.firstofficer.io">FirstOfficer</a>
+    <a class="navbar-brand" id="site_brand" href="/">/ Metrics Learning Center</a>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/news-and-updates">News and Updates</a>
+      </li>
+      <li>
+        <a href="http://www.turbineroom.com/blog">BLOG</a>
+      </li>
+      <li>
+        <a class="navbar-brand" href="/contact-support/">CONTACT SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='container' id="main" role="main">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7">
+        <div class="est-reading-time">
+  This article takes 4 minutes to read
+</div>
+
+<h1 id="booking-of-capacity-based-charges">Booking of Capacity-Based Charges</h1>
+
+<p>This article explains the principles that
+FirstOfficer.io uses in booking upgrades and downgrades when Stripe quantities are used.</p>
+
+<p>FirstOfficer.io books the quantities
+and their effect is shown in <a href="https://www.firstofficer.io/upgrades">Upgrades &amp; Downgrades View</a>.</p>
+
+<h2 id="what-shows-where">What Shows Where?</h2>
+
+<p><a href="https://www.firstofficer.io/growth">The MRR View</a> visualizes how your MRR changed during the month.</p>
+
+<p>The quantities get booked to the same categories than the subscription MRR
+and they do not affect subscription counts shown in MRR View.</p>
+
+<p><img src="../../images/mrr_view_breakdown.png" /></p>
+
+<p>Any changes in quantities of new customers' subscriptions are booked to New MRR.</p>
+
+<p>Any quantities freed when customer's last subscription ends are booked to Lost MRR.</p>
+
+<p>New MRR View, Lost MRR View and Total MRR View do not show quantity counts. In practice this means that the extra capacity needed to support
+new customers and the released capacity from lost customers is not
+visible in FirstOfficer.io at the moment.</p>
+
+<p>Changes in quantity counts for existing subscriptions, but excluding lost subscriptions, are shown in
+the <a href="https://www.firstofficer.io/upgrades">Upgrades &amp; Downgrades View</a>,
+which opens when you click expansion or contraction figures.</p>
+
+<h2 id="examples-of-booking-quantities">Examples of Booking Quantities</h2>
+
+<p>Let's assume you charge $25/unit/month.</p>
+
+<p><strong>Example 1.</strong> A new customer arrives in January 1st and buys 1 unit. Later in January he subscribes for 2 units more.</p>
+
+<p><strong>Booking:</strong> MRR of $75 and 3 units is booked to January New MRR category.</p>
+
+<p><strong>Example 2.</strong> A customer with 5 units downgrades to using just 2 units</p>
+
+<p><strong>Booking:</strong> A quantity decrease of -3 units and -$75 of MRR is booked. Total MRR reported for this customer is $50.</p>
+
+<h2 id="examples-of-booking-quantities-when-multiple-plans-are-used">Examples of Booking Quantities when Multiple Plans are used</h2>
+
+<p>The principle is that the quantities are kept separate from plan changes.
+This is necessary to see the true impact of capacity usage changes.</p>
+
+<p>The old plan quantities are reduced to 1 before booking the upgrade.
+The upgrade/downgrade is done with a quantity of 1 and any additional units are booked as a separate quantity change.</p>
+
+<p>Let's assume Plan 'Hobby' costs $25/unit/month and Plan 'Startup' costs $50/unit/month.</p>
+
+<p><strong>Example 3.</strong> A new customer arrives in January 1st and buys 1 unit of Hobby. Later in January he upgrades to Startup, 2 units.</p>
+
+<p><strong>Booking:</strong> $100 of New MRR and 2 units is booked to Startup Plan in January.</p>
+
+<p><strong>Example 4.</strong> A customer with 4 units ($100) of Hobby upgrades to 3 units ($150) of Startup.</p>
+
+<p><strong>Booking:</strong> A quantity decrease of -3 units and -$75 of MRR is booked to Hobby Plan.
+A MRR contraction of -$25 and -1 subscription is booked to Hobby Plan.
+An MRR expansion of +$50 and +1 subscription is booked to Startup Plan.
+A quantity increase of +2 units and +$100 of MRR is booked to Startup Plan.
+The value of this upgrade was +$25 of MRR. Quantity changes increased the MRR by $25 more.</p>
+
+      </div>
+      <div class="hidden-xs hidden-sm col-md-1 col-lg-2">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <aside>
+  <h2>Answer Business Questions</h2>
+  <ul>
+    <li>
+      <a href="/answers/lost-customer-value/">Am I losing high-value customers?</a>
+    </li>
+  </ul>
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="/docs/stripe-api-best-practices/">Best Practices for Using Stripe API</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-use-arpu/">How to use ARPU</a>
+    </li>
+    <li>
+      <a href="/docs/how_to_use_different_churn_rates/">Why do I need 3 Churn Rates?</a>
+    </li>
+  </ul>
+  <h2>Cheat Sheets</h2>
+  <ul>
+    <li>
+      <a href="/saas-metrics/churn-baseline/">Churn Baseline</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/arpu/">Average Revenue Per User - ARPU</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/saas-metrics-glossary/">SaaS Metrics Glossary</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/customer-churn-rate/">Churn Rate (Customers)</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/expansion-vs-upgrade-mrr/">Expansion vs. Upgrade, the Difference</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/cmrr/">Committed MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/growth-ceiling/">Growth Ceiling</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/mrr/">Monthly Recurring Revenue - MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/normalized-revenue/">Normalized Subscription Revenue</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/prepaid-mrr/">Prepaid MRR</a>
+    </li>
+  </ul>
+  <h2>FAQ</h2>
+  <ul>
+    <li>
+      <a href="/answers/metrics-not-like-expected/">My numbers aren't what I expected - Why?</a>
+    </li>
+  </ul>
+  <h2>FirstOfficer.io Documentation</h2>
+  <ul>
+    <li>
+      <a href="/docs/importing-non-stripe-payments/">Importing Non-Stripe Payments</a>
+    </li>
+    <li>
+      <a href="/docs/analytics_calculation_principles/">Calculation Principles</a>
+    </li>
+    <li>
+      <a href="/docs/calculation_principles_annual_refunds/">Calculation Principles - Annual Subscription Refunds</a>
+    </li>
+    <li>
+      <a href="/docs/quantity_handling/">Booking of Capacity-Based Charges</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-calculate-prepaid-MRR/">Calculation Principles - Prepaid MRR</a>
+    </li>
+    <li>
+      <a href="/docs/weekly-email-report/">How to read the Weekly Email Report</a>
+    </li>
+    <li>
+      <a href="/docs/annual-report/">How to read the Annual Report</a>
+    </li>
+    <li>
+      <a href="/docs/dashboard-customization/">Dashboard Customization</a>
+    </li>
+  </ul>
+</aside>
+
+      </div>
+    </div>
+    <div class='footer'>
+© 2014-2016 FirstOfficer.io by Turbine Room Ltd. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>

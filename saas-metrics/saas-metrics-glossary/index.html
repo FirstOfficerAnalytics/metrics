@@ -1,0 +1,609 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
+  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/flat-ui.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/base.css" rel="stylesheet" type="text/css" />
+  <title>FirstOfficer.io - SaaS Metrics Glossary</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand toolbar_logo logo" href="http://www.firstofficer.io">FirstOfficer</a>
+    <a class="navbar-brand" id="site_brand" href="/">/ Metrics Learning Center</a>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/news-and-updates">News and Updates</a>
+      </li>
+      <li>
+        <a href="http://www.turbineroom.com/blog">BLOG</a>
+      </li>
+      <li>
+        <a class="navbar-brand" href="/contact-support/">CONTACT SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='container' id="main" role="main">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div class='cheatsheet'>
+          <h1 id="saas-metrics-glossary">SaaS Metrics Glossary</h1>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3></h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>ACL</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Average Contract Length, Average Customer Lifespan</b><br />
+Use <code>1 / Customer Churn Rate</code>, when calculating the <a href="#CLTV">CLTV</a>.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>ACV</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Annual Contract Value</b><br />
+Usually <code>Monthly Subscription Price x 12</code>, but several definitions exist.
+One approach is to cap <a href="#CLTV">CLTV</a> at 12 months.
+
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>ARPU</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Average Revenue Per User</b><br />
+In practice this can be anything from
+Average Revenue per Seat to Average Revenue per Paying Account. For SaaS, it's most often Average MRR per Subscription.
+<br /><br />
+Details, usage and formulas: <a href="/saas-metrics/arpu/">ARPU Cheat Sheet</a>
+<br /><br />
+Related to: Average Revenue Per Account (ARPA), Average Revenue Per Paying User (ARPPU)
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>ARR</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="ARR"></a>
+<b>Annual Recurring Revenue</b>, or <b>Annual Run Rate</b><br />Just like MRR, but uses one year as
+a normalization period. When only annual subscriptions are sold and ARR is
+ as a main metric, there are several variations like with MRR.<br /><br />
+ However, when your main metric is MRR, we can use following formulas:
+<br />
+ When estimating future ARR for a single month: <code>MRR x 12</code>
+ <br />
+ When reporting past ARR in annual report: <code>Sum of MRRs from past 12 months</code>
+ <br /><br />
+ See also <a href="#MRR">MRR</a>, <a href="#RunRate">Run Rate</a>, <a href="#RecurringRevenue">Recurring Revenue</a>
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Bookings</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Total value of committed contracts with customers</b><br />
+When a customer commits to spend money with your company, that is a “booking”.<br />
+However, if a contract period exceeds one year, it's common to book
+just the value from the first year.<br /><br />
+Bookings may be used e.g. to calculate provisions for sales personnel.
+If you charge the annual and other long-term subscriptions up-front,
+you usually don't need this metric.
+
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Billings</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Amount invoiced, sales</b><br />
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Burn Rate</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="BurnRate"></a>
+<b>Cash spent per month</b><br />
+Burn rate is a synonymous term for negative cash flow. It is used to calculate how fast a company uses its shareholder capital.
+<br /><br />
+People sometimes use burn rate also when
+there are positive cash-flows. In that case what they
+call "gross burn rate" is the normal burn rate and "net burn rate" is <code>Burn Rate - MRR</code>.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>CAC</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Customer Acquisition Cost</b><br />
+A unit metric for the price to acquire one customer: <code>Marketing Costs / New Paying Customers</code>.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Churn Rate</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Percentage of customers who stop subscribing to a service</b><br />
+This is the SaaS metric with most variations of them all.
+<br /><br />
+Churn rate can
+be calculated for Customers/Accounts, Subscriptions, Users and MRR.
+<br /><br />
+In addition to that there are net and regular (non-net) churn rates.
+The net churn rate is calculated from the whole customer base, while the
+regular churn rate is calculated from customers who can actually churn.
+<a href="/docs/how_to_use_different_churn_rates/">Different variations are used for different purposes</a>.
+<br /><br />
+On top of that, businesses may use their own
+<a href="http://blog.firstofficer.io/articles/your-ltv-is-wrong-if/">custom definitions for active customers</a>.
+This means that you must be careful when comparing your churn rate to others.
+<br /><br />
+Only non-SaaS businesses calculate Revenue Churn from non-normalized revenue and they use
+different formulas, SaaSes use MRR Churn instead.
+<br /><br />
+FirstOfficer shows Net MRR Churn, Subscription Churn and MRR Churn.
+If your customers each have just one subscription, Subscription Churn is the same as Customer/User Churn.
+<br /><br />
+Details, usage and formulas: <a href="/saas-metrics/customer-churn-rate/">Customer Churn Rate</a>
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>CR</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Conversion Rate. The percentage of users who take a desired action</b>.<br />
+In SaaS, usually means the percentage of site visitors who become paying customers.
+<br /><br />
+Used to calculate how much you can pay per site visit (PPC).
+  It's also common to calculate intermediate conversion rates (Conversion Funnel): <br />
+  <ul>
+  <li>Visit to Trial Rate</li>
+  <li>Trial to Active Rate</li>
+  <li>Trial to Paid Rate</li>
+  </ul>
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>CLTV</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="CLTV"></a>
+<b>Customer Life-Time Value. Estimate of the projected total value of a customer.</b>
+<br /><br />
+"Value" originally meant "profit", but there are several
+variations of this metric. For some reason everyone seems to be nowadays
+calculating the revenue-based variation so that's what FirstOfficer offers too.
+<br /><br />
+However, it's strongly recommended that you convert your CLTV to
+the profit-based form before using it.
+<br /><br />
+Revenue-based formula:<br />
+<code> (1 / Customer Churn Rate) * ARPU </code><br />
+<br />
+Simplified profit-based formula: <br />
+<code> ((1 / Customer Churn Rate) * ARPU ) * GPM</code><br />
+<br />
+Also abbreviated as LTV.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>COGS (COS)</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Cost of Goods Sold, Cost of Service</b><br />
+Total Cost to Serve (TCS) / COGS
+Revenue - COS = Gross Profit Margin
+</p>
+</div>
+</div>
+
+<!-- partial(:cheat_column_start, :locals => { :text => 'CPA'}) >
+<b>Cost Per Acquisition</b>
+< partial 'cheat_column_end' -->
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>DAU/MAU</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Daily Active Users vs Monthly Active Users Ratio</b><br />
+Measures customer activity. While more often used in game industry,
+this metric is often asked by the investors.
+<br /><br />
+Active use needs to be defined and measured case-by-case, often
+requiring the user to visit several pages.
+<br /><br />This metric is not available in FirstOfficer.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Deferred Revenue</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="DeferredRevenue"></a>
+<b>Revenue that has not yet been earned</b><br />
+In accrual-basis accounting, the revenue is recognized when the service is delivered.
+The undelivered part is a liability and is called Deferred Revenue.
+<br /><br />
+Related to: <a href="#PrepaidMRR">Prepaid MRR</a>
+<br /><br />
+Official International Accounting Standards metric (IAS, IFRS, GAAP).
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>GPM</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Gross Profit Margin</b><br />
+Sometimes also abbreviated as GP.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>KPI</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Key Performance Indicator</b><br />
+Any important metric. More often used with derived metrics like CLTV and Churn,
+but there are no rules so any number that's important can be called KPI.
+</p>
+</div>
+</div>
+
+<!-- partial(:cheat_column_start, :locals => { :text => 'MAU'}) >
+<b>Monthly Active Users</b><br>
+There's also DAU, Daily Active Users.
+< partial 'cheat_column_end' -->
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Months up front</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Average of months of payment received in advance</b>
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>MRR</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="MRR"></a>
+<b>Monthly Recurring Revenue. Revenue that's likely to continue in the next month</b>.<br />
+There are several variations, like <a href="/saas-metrics/cmrr/">Committed MRR (CMRR)</a>
+and Contracted MRR. FirstOfficer shows <a href="/saas-metrics/mrr/">Contracted MRR</a>.
+<br /><br />
+In addition to that, it's useful to split MRR to subcomponents:
+<br />
+<ul>
+<li>New MRR - The MRR from new and returning customers</li>
+<li>Lost or Churned MRR - The MRR lost due to leaving customers</li>
+<li>Upgrade MRR - The MRR from plan upgrades</li>
+<li>Downgrade MRR - The MRR from plan downgrades</li>
+</ul>
+Terms Expansion MRR and Contraction MRR are often used synonymously
+with Upgrade and Downgrade MRR. If you are looking only at
+ the top-level MRR, they mean the same thing.
+<br /><br />
+However, Expansion and Contraction MRR are used in following formula:
+<br />
+<code>New MRR + Expansion MRR - Contraction MRR - Lost MRR = MRR Growth</code>
+<br /><br />
+Unless a <a href="/saas-metrics/expansion-vs-upgrade-mrr/">different definition is used</a>,
+the formula above stops working at plan level.
+<br /><br />
+It's also worth to notice that different businesses have different
+definitions to what is considered Upgrade and Downgrade.
+For example, when a customer moves from annual to monthly plan,
+<a href="http://blog.firstofficer.io/articles/monthly-to-annual-upgrades/">is that an upgrade or downgrade?</a>
+<br /><br />
+MRR Growth is also called Net New MRR. <br />FirstOfficer discourages the use of Net New MRR and recommends using MRR Growth instead.
+<br /><br />
+Details, usage and formulas: <a href="/saas-metrics/mrr/">Monthly Recurring Revenue</a>
+<br />
+See also <a href="#RecurringRevenue">Recurring Revenue</a>
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Prepaid MRR</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="PrepaidMRR"></a>
+<b>Sum of all Deferred Revenue</b><br />
+Prepaid MRR is the total value of the subscriptions already charged but not yet delivered.
+<br /><br />
+See also <a href="#DeferredRevenue">Deferred Revenue</a>
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Recurring Revenue</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="RecurringRevenue"></a>
+<b>Revenue that's highly likely to continue in the future</b><br />
+Recurring revenue is booked at the rate that service is delivered.
+Only the part of the revenue
+that's expected to continue also in the next month is included.
+<br /><br />
+Booking revenue as it's earned is a standard practice in accrual-basis accounting,
+but when we calculate MRR, we don't do official 'revenue recognition'
+with its standardized rules, but something called 'normalization'.
+We don't call it 'depreciation', because depreciation also
+accounts for loss of value during time.
+We don't call it 'amortization', because amortization is just
+depreciation for intangible assets - like stocks.
+</p>
+</div>
+</div>
+
+<!-- partial(:cheat_column_start, :locals => { :text => 'Renewal Rate'}) >
+<b></b>
+< partial 'cheat_column_end' >
+
+< partial(:cheat_column_start, :locals => { :text => 'ROI'}) >
+<b>Return of Investment</b>
+< partial 'cheat_column_end' -->
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Run Rate</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<a name="RunRate"></a>
+<b>Estimate of how much will be earned over a period of time</b><br />
+In the context of SaaS, often refers to <a href="#ARR">ARR</a>. Includes revenue only,
+the costs are calculated in <a href="#BurnRate">Burn Rate</a>.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>SaaS Quick Ratio</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>MRR gains compared to MRR losses</b><br />
+<code>(New MRR + Expansion MRR) / (Contraction MRR + Churned MRR)</code><br />
+Recommended to be over 4, SaaS Quick Ratio measures how effectively the acquisition can fight churn.
+<br /><br />
+In non-SaaS context, Quick Ratio measures company's ability to pay
+its liabilities with its near cash or quick assets.
+<br /><br />
+FirstOfficer discourages the use of SaaS Quick Ratio and offers Growth-to-New Ratio instead:<br />
+<code>MRR Growth / (New MRR + Upgrade MRR)</code><br />
+It similarly measures how much of the gained MRR you get to keep.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>TCV</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<b>Total Contract Value</b><br />
+Often used as synonym to CLTV.
+<br /><br />
+In FirstOfficer, Total Contract Value is the sum of all payments customer
+has done during his lifetime. It includes everything, even non-subscription purchases.
+</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <aside>
+  <h2>Answer Business Questions</h2>
+  <ul>
+    <li>
+      <a href="/answers/lost-customer-value/">Am I losing high-value customers?</a>
+    </li>
+  </ul>
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="/docs/stripe-api-best-practices/">Best Practices for Using Stripe API</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-use-arpu/">How to use ARPU</a>
+    </li>
+    <li>
+      <a href="/docs/how_to_use_different_churn_rates/">Why do I need 3 Churn Rates?</a>
+    </li>
+  </ul>
+  <h2>Cheat Sheets</h2>
+  <ul>
+    <li>
+      <a href="/saas-metrics/churn-baseline/">Churn Baseline</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/arpu/">Average Revenue Per User - ARPU</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/saas-metrics-glossary/">SaaS Metrics Glossary</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/customer-churn-rate/">Churn Rate (Customers)</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/expansion-vs-upgrade-mrr/">Expansion vs. Upgrade, the Difference</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/cmrr/">Committed MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/growth-ceiling/">Growth Ceiling</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/mrr/">Monthly Recurring Revenue - MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/normalized-revenue/">Normalized Subscription Revenue</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/prepaid-mrr/">Prepaid MRR</a>
+    </li>
+  </ul>
+  <h2>FAQ</h2>
+  <ul>
+    <li>
+      <a href="/answers/metrics-not-like-expected/">My numbers aren't what I expected - Why?</a>
+    </li>
+  </ul>
+  <h2>FirstOfficer.io Documentation</h2>
+  <ul>
+    <li>
+      <a href="/docs/importing-non-stripe-payments/">Importing Non-Stripe Payments</a>
+    </li>
+    <li>
+      <a href="/docs/analytics_calculation_principles/">Calculation Principles</a>
+    </li>
+    <li>
+      <a href="/docs/calculation_principles_annual_refunds/">Calculation Principles - Annual Subscription Refunds</a>
+    </li>
+    <li>
+      <a href="/docs/quantity_handling/">Booking of Capacity-Based Charges</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-calculate-prepaid-MRR/">Calculation Principles - Prepaid MRR</a>
+    </li>
+    <li>
+      <a href="/docs/weekly-email-report/">How to read the Weekly Email Report</a>
+    </li>
+    <li>
+      <a href="/docs/annual-report/">How to read the Annual Report</a>
+    </li>
+    <li>
+      <a href="/docs/dashboard-customization/">Dashboard Customization</a>
+    </li>
+  </ul>
+</aside>
+
+      </div>
+    </div>
+    <div class='footer'>
+© 2014-2016 FirstOfficer.io by Turbine Room Ltd. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>

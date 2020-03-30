@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
+  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/flat-ui.css" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/base.css" rel="stylesheet" type="text/css" />
+  <title>FirstOfficer.io - Churn Rate (Customers)</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand toolbar_logo logo" href="http://www.firstofficer.io">FirstOfficer</a>
+    <a class="navbar-brand" id="site_brand" href="/">/ Metrics Learning Center</a>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/news-and-updates">News and Updates</a>
+      </li>
+      <li>
+        <a href="http://www.turbineroom.com/blog">BLOG</a>
+      </li>
+      <li>
+        <a class="navbar-brand" href="/contact-support/">CONTACT SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='container' id="main" role="main">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div class='cheatsheet'>
+          <h1 id="customer-churn-rate">Customer Churn Rate</h1>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Description:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+The percentage of customers leaving the business.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Use:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+Estimate how long an average customer stays. Needed to calculate Customer Life-Time Value.
+<br /><br />
+Some examples of monthly customer churn rates and respective customer life-times:<br />
+<img src="../../images/churn_rate_to_lifetime.png" />
+￼</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Target:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+Minimize churn - smaller the percentage the better. Recommended monthly churn rate is &lt;1%. Recommended annual churn rate is 5% - 7%.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>To Improve it:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+Offer annual plans, especially if churn rate is &gt;8%. Increase marketing to your ideal customers. Study cohort retention to find out when customers are lost and improve onboarding &amp; life-cycle emails accordingly.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Affects:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+Customer Life-Time Value (CLTV)
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Related to:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+MRR Churn Rate, Net MRR Churn Rate
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Formula:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+<code>
+(# of lost customers/ # of customers with subscription up for renewal) * 100%
+</code>
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Pitfalls:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+You should only include customers who are able churn (subscriptions up for renewal).
+If you include all customers, the numbers will be wrong.
+<br /><br />
+When customer churns from an annual plan the formula gives you an annual churn rate.
+You’ll need to normalize it to get a monthly churn rate.
+<br /><br />
+If you use FirstOfficer, it does this all for you.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Variations:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+It varies when a customer is considered as ‘lost’. <br />
+In FirstOfficer.io, customer is lost when s/he doesn’t renew a subscription. If refunds are given to annual subscription, customer is lost at the month when the full amount was refunded and subscription was canceled. If refunds are given to monthly subscription, customer is lost in the month when subscription revenue ceased.
+</p>
+</div>
+</div>
+
+<div class="row cheatsheet_category">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+    <h3>Also called:</h3>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+    <p>
+
+Attrition Rate,<br />
+Subscription Churn Rate
+</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <aside>
+  <h2>Answer Business Questions</h2>
+  <ul>
+    <li>
+      <a href="/answers/lost-customer-value/">Am I losing high-value customers?</a>
+    </li>
+  </ul>
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="/docs/stripe-api-best-practices/">Best Practices for Using Stripe API</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-use-arpu/">How to use ARPU</a>
+    </li>
+    <li>
+      <a href="/docs/how_to_use_different_churn_rates/">Why do I need 3 Churn Rates?</a>
+    </li>
+  </ul>
+  <h2>Cheat Sheets</h2>
+  <ul>
+    <li>
+      <a href="/saas-metrics/churn-baseline/">Churn Baseline</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/arpu/">Average Revenue Per User - ARPU</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/saas-metrics-glossary/">SaaS Metrics Glossary</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/customer-churn-rate/">Churn Rate (Customers)</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/expansion-vs-upgrade-mrr/">Expansion vs. Upgrade, the Difference</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/cmrr/">Committed MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/growth-ceiling/">Growth Ceiling</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/mrr/">Monthly Recurring Revenue - MRR</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/normalized-revenue/">Normalized Subscription Revenue</a>
+    </li>
+    <li>
+      <a href="/saas-metrics/prepaid-mrr/">Prepaid MRR</a>
+    </li>
+  </ul>
+  <h2>FAQ</h2>
+  <ul>
+    <li>
+      <a href="/answers/metrics-not-like-expected/">My numbers aren't what I expected - Why?</a>
+    </li>
+  </ul>
+  <h2>FirstOfficer.io Documentation</h2>
+  <ul>
+    <li>
+      <a href="/docs/importing-non-stripe-payments/">Importing Non-Stripe Payments</a>
+    </li>
+    <li>
+      <a href="/docs/analytics_calculation_principles/">Calculation Principles</a>
+    </li>
+    <li>
+      <a href="/docs/calculation_principles_annual_refunds/">Calculation Principles - Annual Subscription Refunds</a>
+    </li>
+    <li>
+      <a href="/docs/quantity_handling/">Booking of Capacity-Based Charges</a>
+    </li>
+    <li>
+      <a href="/docs/how-to-calculate-prepaid-MRR/">Calculation Principles - Prepaid MRR</a>
+    </li>
+    <li>
+      <a href="/docs/weekly-email-report/">How to read the Weekly Email Report</a>
+    </li>
+    <li>
+      <a href="/docs/annual-report/">How to read the Annual Report</a>
+    </li>
+    <li>
+      <a href="/docs/dashboard-customization/">Dashboard Customization</a>
+    </li>
+  </ul>
+</aside>
+
+      </div>
+    </div>
+    <div class='footer'>
+© 2014-2016 FirstOfficer.io by Turbine Room Ltd. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>
